@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "id": "doshabhediyam",
+  "title": "Doshabhediyam",
+  "chapter": 12,
+  "subtitle": "Ashtanga Hridayam · Sutrasthana · Chapter 12",
+  "chapterAudio": [],
+  "verses": [
+    {
+      "id": "doshabhediyam-introduction",
+      "kind": "introduction",
+      "number": null,
+      "label": "Introduction",
+      "audio": {
+        "src": "audio/audio_13.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "ATHATO DOSHA BHEDEEYAM\nADHYAYAM VYAAKHYAASYAA MAHA |\nITI HA SMAAHUR ATHREYA ADAYO\nMAHARSHAYAHA |",
+      "devanagari": "अथातो दोषभेदीयमध्यायं व्याख्यास्यामः ।\nइति ह स्माहुरात्रेयादयो महर्षयः ॥",
+      "iast": "athāto doṣabhedīyamadhyāyaṃ vyākhyāsyāmaḥ |\niti ha smāhurātreyādayo maharṣayaḥ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-1",
+      "kind": "shloka",
+      "number": 1,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_14.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "PAKWAASHAYA KATI SAKTHI\nSHROTRAAASTI SPARSHANENDRIUM |\nSTHAANAM VAATASYA TATRAAPI\nPAKWAADHAANAM VISHESHATAH ||",
+      "devanagari": "पक्वाशय-कटी-सक्थि-श्रोत्रास्थि-स्पर्शनेन्द्रियम् ।\nस्थानं वातस्य तत्रापि पक्वाधानं विशेषतः ॥ १ ॥",
+      "iast": "pakvāśaya-kaṭī-sakthi-śrotrāsthi-sparśanendriyam |\nsthānaṃ vātasya tatrāpi pakvādhānaṃ viśeṣataḥ || १ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-2",
+      "kind": "shloka",
+      "number": 2,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_15.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "NAABHIr AAMASHAYAH SWEDO\nLASIKAA RUDHIRAM RASAH |\nDRIK SPARSHANAM CHA PITTASYA\nNAABHIRATRA VISHESHATAH ||",
+      "devanagari": "नाभिर् आमाशयः स्वेदो लसीका रुधिरं रसः ।\nदृक् स्पर्शनं च पित्तस्य नाभिर् अत्र विशेषतः ॥ २ ॥",
+      "iast": "nābhir āmāśayaḥ svedo lasīkā rudhiraṃ rasaḥ |\ndṛk sparśanaṃ ca pittasya nābhir atra viśeṣataḥ || २ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-3",
+      "kind": "shloka",
+      "number": 3,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_16.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "URAH KANTHA SHIRAH KLOMA\nPARVANYAMAASHAYO RASAHA |\nMEDO GHRAANAM CHA JIHVAACHA\nKAPHASYA SUTARAAM URAH ||",
+      "devanagari": "उरः-कण्ठ-शिरः-क्लोम-पर्वाण्य् आमाशयो रसः ।\nमेदो घ्राणं च जिह्वा च कफस्य सु-तराम् उरः ॥ ३ ॥",
+      "iast": "uraḥ-kaṇṭha-śiraḥ-kloma-parvāṇy āmāśayo rasaḥ |\nmedo ghrāṇaṃ ca jihvā ca kaphasya su-tarām uraḥ || ३ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-4",
+      "kind": "shloka",
+      "number": 4,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_17.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "PRAANADI BHEDAATH PANCHAATMA\nVAAYUH PRAANO ATRA MOORDAGAH\nURAH KANTAH SCHARO BUDDI\nHRIDAYENDRIYA CITTA DRIKa",
+      "devanagari": "प्राणादि-भेदात् पञ्चात्मा वायुः प्राणो ऽत्र मूर्ध-गः ।\nउरः-कण्ठ-चरो बुद्धि-हृदयेन्द्रिय-चित्त-धृक् ॥ ४ ॥",
+      "iast": "prāṇādi-bhedāt pañcātmā vāyuḥ prāṇo ’tra mūrdha-gaḥ |\nuraḥ-kaṇṭha-caro buddhi-hṛdayendriya-citta-dhṛk || ४ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-5",
+      "kind": "shloka",
+      "number": 5,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_18.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "SHTEEVANA KSHAVATUDGAARA\nNIHSHWASAANNA PRAVESHA KRUTa\nURAH STHANAM UDAANASYA NAASA\nNAABHI GALAAMSCHARETa",
+      "devanagari": "ष्ठीवन-क्षवथूद्गार-निःश्वासान्न-प्रवेश-कृत् ।\nउरः स्थानम् उदानस्य नासा-नाभि-गलांश् चरेत् ॥ ५ ॥",
+      "iast": "ṣṭhīvana-kṣavathūdgāra-niḥśvāsānna-praveśa-kṛt |\nuraḥ sthānam udānasya nāsā-nābhi-galāṃś caret || ५ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-6",
+      "kind": "shloka",
+      "number": 6,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_19.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "VAAKPRAVRUTTI PRAYATNORJAA\nBALA VARNA SMRUTI KRIYAHAAH\nVYAANO HRUDI STITAH KRITSNA\nDEHACHAARI MAHAA JAVAHA",
+      "devanagari": "वाक्-प्रवृत्ति-प्रयत्नोर्जा-बल-वर्ण-स्मृति-क्रियः ।\nव्यानो हृदि स्थितः कृत्स्न-देह-चारी महा-जवः ॥ ६ ॥",
+      "iast": "vāk-pravṛtti-prayatnorjā-bala-varṇa-smṛti-kriyaḥ |\nvyāno hṛdi sthitaḥ kṛtsna-deha-cārī mahā-javaḥ || ६ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-7",
+      "kind": "shloka",
+      "number": 7,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_20.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "GATYAPA KSHEPANOTKSHEPA\nNIMESHA UNMESHANA ADIKAAHA\nPRAAYAHA SARVAAHA KRIYASTASMIN\nPRATIBADDAHA SHAREERINAAM",
+      "devanagari": "गत्य्-अपक्षेपणोत्क्षेप-निमेषोन्मेषणादिकाः ।\nप्रायः सर्वाः क्रियास् तस्मिन् प्रतिबद्धाः शरीरिणाम् ॥ ७ ॥",
+      "iast": "gaty-apakṣepaṇotkṣepa-nimeṣonmeṣaṇādikāḥ |\nprāyaḥ sarvāḥ kriyās tasmin pratibaddhāḥ śarīriṇām || ७ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-8",
+      "kind": "shloka",
+      "number": 8,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_21.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "SAMAANO AGNI SAMEEPASTHAHA\nKOSHTE CHARATI SARVATAHA\nANNAM GRIHNAATI PACHATI\nVIVECHAYATI MUNCHATI",
+      "devanagari": "समानो ऽग्नि-समीप-स्थः कोष्ठे चरति सर्वतः ।\nअन्नं गृह्णाति पचति विवेचयति मुञ्चति ॥ ८ ॥",
+      "iast": "samāno ’gni-samīpa-sthaḥ koṣṭhe carati sarvataḥ |\nannaṃ gṛhṇāti pacati vivecayati muñcati || ८ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-9",
+      "kind": "shloka",
+      "number": 9,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_22.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "APAANOPAANAGAHA SHRONI BASTI\nMEDROoRU GOCHARAHA\nSHUKRAARTAVA SHAKRUN MOOTRA\nGARBHA NISHKRAMANA KRIYAHA",
+      "devanagari": "अपानो ऽपान-गः श्रोणि-वस्ति-मेढ्रोरु-गो-चरः ।\nशुक्रार्तव-शकृन्-मूत्र-गर्भ-निष्क्रमण-क्रियः ॥ ९ ॥",
+      "iast": "apāno ’pāna-gaḥ śroṇi-vasti-meḍhroru-go-caraḥ |\nśukrārtava-śakṛn-mūtra-garbha-niṣkramaṇa-kriyaḥ || ९ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-10",
+      "kind": "shloka",
+      "number": 10,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_23.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "PITTAM PANCHAATMAKAM TATRA\nPAKWAAMAASHAYA MADHYAGAM\nPANCHABHOOTAATMAKA TWE API\nYATTEJASA GUNODAYAATa",
+      "devanagari": "पित्तं पञ्चात्मकं तत्र पक्वामाशय-मध्य-गम् ।\nपञ्च-भूतात्मक-त्वे ऽपि यत् तैजस-गुणोदयात् ॥ १० ॥",
+      "iast": "pittaṃ pañcātmakaṃ tatra pakvāmāśaya-madhya-gam |\npañca-bhūtātmaka-tve ’pi yat taijasa-guṇodayāt || १० ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-11",
+      "kind": "shloka",
+      "number": 11,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_24.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "TYAKTA DRAVATVAM PAAKKAADI\nKARMANAA ANALA SHABDITAM\nPACHATYANNAM VIBHAJATE SAARA\nKITTAU PRITAK TATHAA",
+      "devanagari": "त्यक्त-द्रव्य-त्वं पाकादि-कर्मणानल-शब्दितम् ।\nपचत्य् अन्नं विभजते सार-किट्टौ पृथक् तथा ॥ ११ ॥",
+      "iast": "tyakta-dravya-tvaṃ pākādi-karmaṇānala-śabditam |\npacaty annaṃ vibhajate sāra-kiṭṭau pṛthak tathā || ११ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-12",
+      "kind": "shloka",
+      "number": 12,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_25.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "TATRASTHAMEVA PITTAANAAM\nSHESHAANAAM APYANUGRAHAM\nKAROTI BALA DAANEeNA PAACHAKAM\nNAAMA TATSMRUTAM",
+      "devanagari": "तत्र-स्थम् एव पित्तानां शेषाणाम् अप्य् अनुग्रहम् ।\nकरोति बल-दानेन पाचकं नाम तत् स्मृतम् ॥ १२ ॥",
+      "iast": "tatra-stham eva pittānāṃ śeṣāṇām apy anugraham |\nkaroti bala-dānena pācakaṃ nāma tat smṛtam || १२ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-13",
+      "kind": "shloka",
+      "number": 13,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_26.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "AAMASHAYA ASHRAYAM PITTAM\nRANJAKAM RASA RANJANAATHa\nBUDDI MEDHA ABHIMAANAA\nDHYAIR ABHIPRETAARTHA\nSAADHANAATa",
+      "devanagari": "आमाशयाश्रयं पित्तं रञ्जकं रस-रञ्जनात् ।\nबुद्धि-मेधाभिमानाद्यैर् अभिप्रेतार्थ-साधनात् ॥ १३ ॥",
+      "iast": "āmāśayāśrayaṃ pittaṃ rañjakaṃ rasa-rañjanāt |\nbuddhi-medhābhimānādyair abhipretārtha-sādhanāt || १३ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-14",
+      "kind": "shloka",
+      "number": 14,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_27.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "SAADANAM HRIDGATAM PITTAM\nROOPA ALOCHANA TAHA SMRUTAM\nDRIKSTHAM AALOCHAKAM\nTVAKSTHAM\nBHRAAJAKAM BHRAAJANAATH\nTVACHAHA",
+      "devanagari": "साधकं हृद्-गतं पित्तं रूपालोचनतः स्मृतम् ।\nदृक्-स्थम् आलोचकं त्वक्-स्थं भ्राजकं भ्राजनात् त्वचः ॥ १४ ॥",
+      "iast": "sādhakaṃ hṛd-gataṃ pittaṃ rūpālocanataḥ smṛtam |\ndṛk-stham ālocakaṃ tvak-sthaṃ bhrājakaṃ bhrājanāt tvacaḥ || १४ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-15",
+      "kind": "shloka",
+      "number": 15,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_28.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "SHLESHMAA TU PANCHADHAA\nURAHSTHAHA SA\nTRIKASYA SVAVEERYATAHA\nHRIDAYASYAANNA VEERYAACCHA\nTATSTHA EVAMBU KARMANAA",
+      "devanagari": "श्लेष्मा तु पञ्च-धोरः-स्थः स त्रिकस्य स्व-वीर्यतः ।\nहृदयस्यान्न-वीर्याच् च तत्-स्थ एवाम्बु-कर्मणा ॥ १५ ॥",
+      "iast": "śleṣmā tu pañca-dhoraḥ-sthaḥ sa trikasya sva-vīryataḥ |\nhṛdayasyānna-vīryāc ca tat-stha evāmbu-karmaṇā || १५ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-16",
+      "kind": "shloka",
+      "number": 16,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_29.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "KAPHA DHAAM NAAM CHA\nSHESHAANAAM\nYAT KAROTYAVALAMBANAM\nATO AVALAMBAKAHA SHLESHMA\nYASTVAAMAASHAYA SAMSTITAHA",
+      "devanagari": "कफ-धाम्नां च शेषाणां यत् करोत्य् अवलम्बनम् ।\nअतो ऽवलम्बकः श्लेष्मा यस् त्व् आमाशय-संस्थितः ॥ १६ ॥",
+      "iast": "kapha-dhāmnāṃ ca śeṣāṇāṃ yat karoty avalambanam |\nato ’valambakaḥ śleṣmā yas tv āmāśaya-saṃsthitaḥ || १६ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-17",
+      "kind": "shloka",
+      "number": 17,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_30.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "KLEDAKAHA SOANNA SANGHAATA\nKLEDANAATa, RASA BODHANAATa\nBODHAKO RASANA STHAAYEE,\nSHIRAHA SAMSTHO AKSHA\nTARPANAATa",
+      "devanagari": "क्लेदकः सो ऽन्न-संघात-क्लेदनाद् रस-बोधनात् ।\nबोधको रसना-स्थायी शिरः-संस्थो ऽक्ष-तर्पणात् ॥ १७ ॥",
+      "iast": "kledakaḥ so ’nna-saṃghāta-kledanād rasa-bodhanāt |\nbodhako rasanā-sthāyī śiraḥ-saṃstho ’kṣa-tarpaṇāt || १७ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-18",
+      "kind": "shloka",
+      "number": 18,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_31.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "TARPAKAHA, ŠANDHI SAMSHLESHAA\nCCHULESHAKAHA SANDHISHU\nSTHITAHA\nITI PRAAYEeNA DOSHANAÂM\nSTHAANAANYA AVIKRUTA~ATMANAAM",
+      "devanagari": "तर्पकः संधि-संश्लेषाच् छ्लेषकः संधिषु स्थितः ।\nइति प्रायेण दोषाणां स्थानान्य् अ-विकृतात्मनाम् ॥ १८ ॥",
+      "iast": "tarpakaḥ saṃdhi-saṃśleṣāc chleṣakaḥ saṃdhiṣu sthitaḥ |\niti prāyeṇa doṣāṇāṃ sthānāny a-vikṛtātmanām || १८ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-19",
+      "kind": "shloka",
+      "number": 19,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_32.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "VYÂAPINAAMAPI JAANÈEYAT\nKARMAANI CHA PRITAK PRITAK\nUSHŇENA YUKTA ROOKSHAADYÁ\nVAAYHU KURVANTI SANCHAYAM",
+      "devanagari": "व्यापिनाम् अपि जानीयात् कर्माणि च पृथक् पृथक् ।\nउष्णेन युक्ता रूक्षाद्या वायोः कुर्वन्ति संचयम् ॥ १९ ॥",
+      "iast": "vyāpinām api jānīyāt karmāṇi ca pṛthak pṛthak |\nuṣṇena yuktā rūkṣādyā vāyoḥ kurvanti saṃcayam || १९ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-20",
+      "kind": "shloka",
+      "number": 20,
+      "label": "",
+      "audio": null,
+      "roman": "SHEETENA KOPAMUSHNENA\nSHAMAM SINGDAADAYO GUNAAHA\nSHEETENA YUKTAA TEEKSHNAADYAA\nSCCHAYAM PITTASYA KURVATE",
+      "devanagari": "शीतेन कोपम् उष्णेन शमं स्निग्धादयो गुणाः ।\nशीतेन युक्तास् तीक्ष्णाद्याश् चयं पित्तस्य कुर्वते ॥ २० ॥",
+      "iast": "śītena kopam uṣṇena śamaṃ snigdhādayo guṇāḥ |\nśītena yuktās tīkṣṇādyāś cayaṃ pittasya kurvate || २० ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-21",
+      "kind": "shloka",
+      "number": 21,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_33.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "USHNENA KOPA MANDADHYAAHA\nSHAMAM SHEETOPA SAMHITAAHA\nSHEETENA YUKTAAHA\nSNIGDHADYAAHA KURVATE\nSHLESHMANA SCCHAYAM",
+      "devanagari": "उष्णेन कोपं मन्दाद्याः शमं शीतोपसंहिताः ।\nशीतेन युक्ताः स्निग्धाद्याः कुर्वते श्लेष्मणश् चयम् ॥ २१ ॥",
+      "iast": "uṣṇena kopaṃ mandādyāḥ śamaṃ śītopasaṃhitāḥ |\nśītena yuktāḥ snigdhādyāḥ kurvate śleṣmaṇaś cayam || २१ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-22",
+      "kind": "shloka",
+      "number": 22,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_34.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "USHNENA KOPAM TENAIVA\nGUNAA ROOKSHAADAYAH SHAMAM\nCHAYO VRUDDIHI SVADHAAMNEVA\nPRADVESHO VRUDDIHETUSHU",
+      "devanagari": "उष्णेन कोपं तेनैव गुणा रूक्षादयः शमम् ।\nचयो वृद्धिः स्व-धाम्न्य् एव प्रद्वेषो वृद्धि-हेतुषु ॥ २२ ॥",
+      "iast": "uṣṇena kopaṃ tenaiva guṇā rūkṣādayaḥ śamam |\ncayo vṛddhiḥ sva-dhāmny eva pradveṣo vṛddhi-hetuṣu || २२ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-23",
+      "kind": "shloka",
+      "number": 23,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_35.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "VIPAREETA GUNECCHAA CHA\nKOPASTUNMAARGA GAAMITAA\nLINĞAANAAM DARSHANAM\nSVÉSHAAMASVAASTHYAM ROGA\nSAMBHAVAH",
+      "devanagari": "विपरीत-गुणेच्छा च कोपस् तून्-मार्ग-गमि-ता ।\nलिङ्गानां दर्शनं स्वेषाम् अ-स्वास्थ्यं रोग-संभवः ॥ २३ ॥",
+      "iast": "viparīta-guṇecchā ca kopas tūn-mārga-gami-tā |\nliṅgānāṃ darśanaṃ sveṣām a-svāsthyaṃ roga-saṃbhavaḥ || २३ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-24",
+      "kind": "shloka",
+      "number": 24,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_36.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "SVASTHAANASTHASYA SAMATAA\nVIKAARAASAMBHAVAHA SHAMAHA\nCHAYA PRAKOPA PRASHAMAA VAAYÓ\nGREESHMAADISHU TRISHU",
+      "devanagari": "स्व-स्थान-स्थस्य सम-ता विकारा-संभवः शमः ।\nचय-प्रकोप-प्रशमा वायोर् ग्रीष्मादिषु त्रिषु ॥ २४ ॥",
+      "iast": "sva-sthāna-sthasya sama-tā vikārā-saṃbhavaḥ śamaḥ |\ncaya-prakopa-praśamā vāyor grīṣmādiṣu triṣu || २४ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-25",
+      "kind": "shloka",
+      "number": 25,
+      "label": "",
+      "audio": null,
+      "roman": "VARSHAADISHU TU PITTASYA\nSHLESHMANAHA SHISHIRAADISHU\nCHÉÉYATE LAGHUROOKSHAA BHI\n+ROSHADHEEBHIHI SAMEERANAHA",
+      "devanagari": "वर्षादिषु तु पित्तस्य श्लेष्मणः शिशिरादिषु ।\nचीयते लघु-रूक्षाभिर् ओषधिभिः समीरणः ॥ २५ ॥",
+      "iast": "varṣādiṣu tu pittasya śleṣmaṇaḥ śiśirādiṣu |\ncīyate laghu-rūkṣābhir oṣadhibhiḥ samīraṇaḥ || २५ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-26",
+      "kind": "shloka",
+      "number": 26,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_37.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "TADWIDHASTADVIDHE DEHE\nKAALÁSYAUSHNA YAANNA KUPYATI\nADBHIRAMLAVIPAAKAǍ\nBHIROSHADHIBHISHCHA\nTAADRUSHAM",
+      "devanagari": "तद्-विधस् तद्-विधे देहे कालस्यौष्ण्यान् न कुप्यति ।\nअद्भिर् अम्ल-विपाकाभिर् ओषधिभिश् च तादृशम् ॥ २६ ॥",
+      "iast": "tad-vidhas tad-vidhe dehe kālasyauṣṇyān na kupyati |\nadbhir amla-vipākābhir oṣadhibhiś ca tādṛśam || २६ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-27",
+      "kind": "shloka",
+      "number": 27,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_38.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "PITTAM YAATI CHAYAM KOPAM NA TU\nKAALASYA SHAITYATAHA\nCHÉEYATE SNIGDHASHEETA\nBHIRUDAKAÚSHADHIBHIHI KAPHAHA",
+      "devanagari": "पित्तं याति चयं कोपं न तु कालस्य शैत्यतः ।\nचीयते स्निग्ध-शीताभिर् उदकौषधिभिः कफः ॥ २७ ॥",
+      "iast": "pittaṃ yāti cayaṃ kopaṃ na tu kālasya śaityataḥ |\ncīyate snigdha-śītābhir udakauṣadhibhiḥ kaphaḥ || २७ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-28",
+      "kind": "shloka",
+      "number": 28,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_39.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "TULYEÉPI KAALE DEHE CHA\nSKANNATVAANNA PRAKUPYATÌ\nITI KAALASWABHAAVÓ\nAYAMAAHAARAADI VASHAATPUNAHA",
+      "devanagari": "तुल्ये ऽपि काले देहे च स्कन्न-त्वान् न प्रकुप्यति ।\nइति काल-स्व-भावो ऽयम् आहारादि-वशात् पुनः ॥ २८ ॥",
+      "iast": "tulye ’pi kāle dehe ca skanna-tvān na prakupyati |\niti kāla-sva-bhāvo ’yam āhārādi-vaśāt punaḥ || २८ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-29",
+      "kind": "shloka",
+      "number": 29,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_40.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "CHAYAADEEN YAANTI SADYOAPI\nDOSHAAHA KAALEPI VAA NA TU\nVYAAPNOTI SAHASAA\nDEHAMAAPAADA~TALAMASTAKAM",
+      "devanagari": "चयादीन् यान्ति सद्यो ऽपि दोषाः काले ऽपि वा न तु ।\nव्याप्नोति सहसा देहम् आ-पाद-तल-मस्तकम् ॥ २९ ॥",
+      "iast": "cayādīn yānti sadyo ’pi doṣāḥ kāle ’pi vā na tu |\nvyāpnoti sahasā deham ā-pāda-tala-mastakam || २९ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-30",
+      "kind": "shloka",
+      "number": 30,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_41.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "NIVARTATE TU KUPITO MALO\nALPAALPAM JALAUGHAVAT\nŃAANAAROOPAI ASANKHYEYAI\nVIKAARAIHI KUPITAA MALAAH",
+      "devanagari": "निवर्तते तु कुपितो मलो ऽल्पाल्पं जलौघ-वत् ।\nनाना-रूपैर् अ-संख्येयैर् विकारैः कुपिता मलाः ॥ ३० ॥",
+      "iast": "nivartate tu kupito malo ’lpālpaṃ jalaugha-vat |\nnānā-rūpair a-saṃkhyeyair vikāraiḥ kupitā malāḥ || ३० ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-31",
+      "kind": "shloka",
+      "number": 31,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_42.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "TAAPAYANTI TANUM TASMAATH\nTADDE+TWAAKRUTI SAADHANAM\nSHAKYAM’ NAIKAIKASHÓ\nVAKTUMATAHA SAAMAANYA\nMUCHYATE",
+      "devanagari": "तापयन्ति तनुं तस्मात् तद्-धेत्व्-आकृति-साधनम् ।\nशक्यं नैकैक-शो वक्तुम् अतः सामान्यम् उच्यते ॥ ३१ ॥",
+      "iast": "tāpayanti tanuṃ tasmāt tad-dhetv-ākṛti-sādhanam |\nśakyaṃ naikaika-śo vaktum ataḥ sāmānyam ucyate || ३१ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-32",
+      "kind": "shloka",
+      "number": 32,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_43.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "DOSHAA ÊVA HI SARVESHAAM\nROGAANAAM EKA KAARANAM\nYATHAÁ PAKSHEE PARIPATAN\nSARVATAHA SARVA MAPYAHAHA",
+      "devanagari": "दोषा एव हि सर्वेषां रोगाणाम् एक-कारणम् ।\nयथा पक्षी परिपतन् सर्वतः सर्वम् अप्य् अहः ॥ ३२ ॥",
+      "iast": "doṣā eva hi sarveṣāṃ rogāṇām eka-kāraṇam |\nyathā pakṣī paripatan sarvataḥ sarvam apy ahaḥ || ३२ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-33",
+      "kind": "shloka",
+      "number": 33,
+      "label": "",
+      "audio": {
+        "src": "audio/audio_44.m4a",
+        "type": "audio/mp4"
+      },
+      "roman": "CHCHAAYAǍMATYÊTI NAATMEEYAM\nYATHAA VAA KRUTSNA MAPYADAHA\nVIKAĀRAJAATAM VIVIDHAM THREEN\nGUNAANNAATI VARTATE",
+      "devanagari": "छायाम् अत्येति नात्मीयां यथा वा कृत्स्नम् अप्य् अदः ।\nविकार-जातं विविधं त्रीन् गुणान् नातिवर्तते ॥ ३३ ॥",
+      "iast": "chāyām atyeti nātmīyāṃ yathā vā kṛtsnam apy adaḥ |\nvikāra-jātaṃ vividhaṃ trīn guṇān nātivartate || ३३ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-34",
+      "kind": "shloka",
+      "number": 34,
+      "label": "",
+      "audio": null,
+      "roman": "TATHAA SVADHAATU VAISHAMYA\nNIMITTAMAPI SARVADAA\nVIKÃARAJAATAM THREEN DOSHAAN\nTESHAAM KOPE TU KAARANAM",
+      "devanagari": "तथा स्व-धातु-वैषम्य-निमित्तम् अपि सर्व-दा ।\nविकार-जातं त्रीन् दोषान् तेषां कोपे तु कारणम् ॥ ३४ ॥",
+      "iast": "tathā sva-dhātu-vaiṣamya-nimittam api sarva-dā |\nvikāra-jātaṃ trīn doṣān teṣāṃ kope tu kāraṇam || ३४ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    },
+    {
+      "id": "doshabhediyam-shloka-35",
+      "kind": "shloka",
+      "number": 35,
+      "label": "",
+      "audio": null,
+      "roman": "ARTHAIR ASAATMAIHI SAMYOGAHA\nKAALAHA KARMA CHA DUSHKRUTAM\nHEENAATIMITYAAYOGÉNA BHIDYATE\nTAT PUNAH STRIVIDHA",
+      "devanagari": "अर्थैर् अ-सात्म्यैः संयोगः कालः कर्म च दुष्-कृतम् ।\nहीनाति-मिथ्या-योगेन भिद्यते तत् पुनस् त्रि-धा ॥ ३५ ॥",
+      "iast": "arthair a-sātmyaiḥ saṃyogaḥ kālaḥ karma ca duṣ-kṛtam |\nhīnāti-mithyā-yogena bhidyate tat punas tri-dhā || ३५ ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
+    }
+  ]
+}

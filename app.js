@@ -1,3 +1,193 @@
+/* ============================================================
+   STRUCTURED CONTENT RENDERER
+   The collection content lives in data/*.json. Render it first,
+   then let the existing search/audio/sticky-index code initialize.
+   ============================================================ */
+function ce(tag, cls, text){
+  const n=document.createElement(tag);
+  if(cls) n.className=cls;
+  if(text!==undefined && text!==null) n.textContent=String(text);
+  return n;
+}
+function addAudio(parent, audio, label, kind){
+  if(!audio || !audio.src) return;
+  const wrap=ce('div',kind);
+  if(label) wrap.appendChild(ce('span','chant-label',label));
+  if(kind==='attached-audio' || kind==='chapter-audio-item'){
+    const b=ce('button','mobile-play','▶ Chanting');
+    b.type='button';
+    b.setAttribute('aria-label','Play chanting '+(label||'Chanting'));
+    wrap.appendChild(b);
+  }
+  const a=document.createElement('audio');
+  a.controls=true;
+  a.preload=kind==='verse-audio'?'none':'metadata';
+  const src=document.createElement('source');
+  src.src=audio.src;
+  if(audio.type) src.type=audio.type;
+  a.appendChild(src);
+  wrap.appendChild(a);
+  parent.appendChild(wrap);
+}
+function addSource(parent, value){
+  if(value) parent.appendChild(ce('div','source-attribution',value));
+}
+function makeScriptPair(item, opts={}){
+  const pair=ce('div','script-pair');
+  if(opts.wrapRoman){
+    const rw=ce('div','roman-wrap');
+    rw.appendChild(ce('div','roman-reading-label','Simplified English / Phonetic'));
+    rw.appendChild(ce('pre','',item.roman||''));
+    addSource(rw,item.sourceRoman);
+    pair.appendChild(rw);
+  }else{
+    pair.appendChild(ce('pre','',item.roman||''));
+  }
+
+  const dw=ce('div',(opts.verified?'chapter-source-verified ':'')+'devanagari-wrap');
+  dw.appendChild(ce('div','devanagari-label','Devanagari'));
+  dw.appendChild(ce('pre','devanagari-text',item.devanagari||''));
+  addSource(dw,item.sourceDevanagari);
+  pair.appendChild(dw);
+
+  if(item.iast){
+    const iw=ce('div','iast-transliteration');
+    iw.appendChild(ce('div','iast-label','IAST'));
+    iw.appendChild(ce('div','iast-text',item.iast));
+    pair.appendChild(iw);
+  }
+  return pair;
+}
+function renderOpening(root,data){
+  root.innerHTML='';
+  root.appendChild(ce('h2','section-title',data.title||'Invocations & Foundational Shlokas'));
+  const items=data.items||[];
+  const invocation=items.find(x=>x.kind==='invocation');
+  if(invocation){
+    const card=ce('div','intro-card searchable');
+    addAudio(card,invocation.audio,invocation.audioLabel||'Dhanvantari Invocation','attached-audio');
+    if(invocation.title) card.appendChild(ce('div','shloka-title',invocation.title));
+    card.appendChild(makeScriptPair(invocation,{wrapRoman:true}));
+    root.appendChild(card);
+  }
+  const generals=items.filter(x=>x.kind!=='invocation');
+  if(generals.length){
+    root.appendChild(ce('h3','general-shlokas-title','General Shlokas'));
+    generals.forEach(item=>{
+      const card=ce('div','intro-card general-shloka searchable');
+      if(item.id) card.id=item.id;
+      card.appendChild(makeScriptPair(item,{wrapRoman:true}));
+      root.appendChild(card);
+    });
+  }
+}
+function renderHerbs(root,data){
+  root.innerHTML='';
+  root.appendChild(ce('h2','section-title',data.title||'Herbs'));
+  const lookup=ce('div','lookup');
+  lookup.appendChild(ce('h3','','Quick Herb Lookup'));
+  const links=ce('div','lookup-links');
+  (data.items||[]).forEach(item=>{
+    const a=ce('a','',item.title||item.id);
+    a.href='#'+item.id;
+    links.appendChild(a);
+  });
+  lookup.appendChild(links); root.appendChild(lookup);
+
+  const grid=ce('div','herb-grid');
+  (data.items||[]).forEach(item=>{
+    const card=ce('article','card herb-card searchable'); card.id=item.id||'';
+    const head=ce('div','herb-head');
+    head.appendChild(ce('h3','',item.title||item.id));
+    addAudio(head,item.audio,item.audioLabel||'Chanting','attached-audio');
+    card.appendChild(head);
+    card.appendChild(makeScriptPair(item,{wrapRoman:true}));
+    grid.appendChild(card);
+  });
+  root.appendChild(grid);
+}
+function renderChapter(root,data){
+  root.innerHTML='';
+  root.appendChild(ce('h2','section-title',data.title||('Chapter '+data.chapter)));
+  if(data.subtitle) root.appendChild(ce('div','chapter-subtitle',data.subtitle));
+  if(data.note) root.appendChild(ce('div','devanagari-source-note',data.note));
+
+  if((data.chapterAudio||[]).length){
+    const suite=ce('div','chapter-audio-suite');
+    suite.appendChild(ce('h3','',data.chapter===11?'Chapter 11 Chanting':'Chapter Chanting'));
+    const items=ce('div','chapter-audio-items');
+    data.chapterAudio.forEach(x=>addAudio(items,x.audio,x.label,'chapter-audio-item'));
+    suite.appendChild(items); root.appendChild(suite);
+  }
+
+  const numbered=(data.verses||[]).filter(v=>Number.isFinite(v.number));
+  if(numbered.length){
+    const index=ce('div','shloka-index'); index.id=data.id+'-index';
+    index.appendChild(ce('h3','','Shloka Index'));
+    const links=ce('div','shloka-index-links');
+    numbered.forEach(v=>{
+      const a=ce('a','',v.number); a.href='#'+v.id; links.appendChild(a);
+    });
+    index.appendChild(links); root.appendChild(index);
+    root.appendChild(ce('p','audio-ready-note','Chanting audio is available beside the shlokas where a recording has been provided.'));
+  }
+
+  const grid=ce('div','verse-grid');
+  (data.verses||[]).forEach(v=>{
+    let cls='verse searchable';
+    if(v.kind==='introduction') cls+=' intro-verse';
+    else if(v.kind==='note') cls+=' note-verse';
+    else if(v.kind==='closing') cls+=' closing-verse';
+    const card=ce('div',cls); card.id=v.id||'';
+
+    const head=ce('div','verse-head');
+    if(Number.isFinite(v.number)) head.appendChild(ce('span','verse-number','Shloka '+v.number));
+    else head.appendChild(ce('span','verse-label',v.label||v.kind||''));
+    const audioWrap=ce('span','verse-audio');
+    if(v.audio && v.audio.src){
+      if(v.audioLabel) audioWrap.appendChild(ce('span','chant-label',v.audioLabel));
+      const a=document.createElement('audio'); a.controls=true; a.preload='none';
+      const src=document.createElement('source'); src.src=v.audio.src; if(v.audio.type)src.type=v.audio.type;
+      a.appendChild(src); audioWrap.appendChild(a);
+    }else{
+      audioWrap.dataset.audioSlot='true';
+    }
+    head.appendChild(audioWrap); card.appendChild(head);
+    card.appendChild(makeScriptPair(v,{verified:v.kind!=='closing'}));
+    grid.appendChild(card);
+  });
+  root.appendChild(grid);
+}
+async function renderStructuredCollection(){
+  const specs=[
+    ['opening','data/opening.json','opening'],
+    ['herbs','data/herbs.json','herbs'],
+    ['doshaadi','data/chapter-11.json','chapter'],
+    ['doshabhediyam','data/chapter-12.json','chapter']
+  ];
+  for(const [id,url,type] of specs){
+    const root=document.getElementById(id);
+    if(!root) continue;
+    const res=await fetch(url,{cache:'no-store'});
+    if(!res.ok) throw new Error('Could not load '+url+' ('+res.status+')');
+    const data=await res.json();
+    if(type==='opening') renderOpening(root,data);
+    else if(type==='herbs') renderHerbs(root,data);
+    else renderChapter(root,data);
+  }
+}
+try{
+  await renderStructuredCollection();
+}catch(err){
+  console.error('Structured collection render failed:',err);
+  const main=document.querySelector('main');
+  if(main){
+    const msg=ce('div','no-results','The collection data could not be loaded. Please refresh the page.');
+    msg.style.display='block';
+    main.prepend(msg);
+  }
+}
+
 /* Extracted from index.html to make the site easier to maintain. */
 
 (function(){

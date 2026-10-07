@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shloka Collection Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">AH Sloka Chanting</p>
+      <h1>Collection Admin</h1>
+      <p class="sub">Edit data-driven shlokas without touching the public page HTML.</p>
+    </div>
+    <a class="site-link" href="./index.html">Open collection</a>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="panel sticky-panel">
+        <div class="panel-head">
+          <h2>Sections</h2>
+          <button id="newSectionBtn" class="btn small">+ Section</button>
+        </div>
+        <div id="sectionList" class="section-list"></div>
+        <div class="legacy-note">
+          <strong>Existing collection</strong>
+          <p>Only entries already moved into JSON are editable here. Chapter 11, Chapter 12, Herbs and the foundational shlokas are still in the legacy HTML and will be migrated next.</p>
+        </div>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <div class="panel toolbar">
+        <div>
+          <span id="statusDot" class="status-dot"></span>
+          <span id="statusText">Loading current data…</span>
+        </div>
+        <div class="toolbar-actions">
+          <button id="importBtn" class="btn ghost">Import JSON</button>
+          <input id="importFile" type="file" accept=".json,application/json" hidden>
+          <button id="copyBtn" class="btn ghost">Copy JSON</button>
+          <button id="downloadBtn" class="btn primary">Download JSON</button>
+        </div>
+      </div>
+
+      <div id="emptyState" class="panel empty-state">
+        <h2>Select a section</h2>
+        <p>Choose a section on the left, or create a new one.</p>
+      </div>
+
+      <div id="editorArea" hidden>
+        <div class="panel section-editor">
+          <div class="panel-head">
+            <h2>Section</h2>
+            <button id="deleteSectionBtn" class="btn danger ghost">Delete section</button>
+          </div>
+          <div class="field-grid three">
+            <label>Section ID
+              <input id="sectionId" type="text" placeholder="chapter-13">
+            </label>
+            <label>Title
+              <input id="sectionTitle" type="text" placeholder="Chapter 13">
+            </label>
+            <label>Navigation label
+              <input id="sectionNav" type="text" placeholder="Chapter 13">
+            </label>
+          </div>
+          <label>Subtitle
+            <input id="sectionSubtitle" type="text" placeholder="Ashtanga Hridayam · Sutrasthana · Chapter 13">
+          </label>
+        </div>
+
+        <div class="split">
+          <div class="panel">
+            <div class="panel-head">
+              <h2>Shlokas</h2>
+              <button id="newVerseBtn" class="btn small">+ Shloka</button>
+            </div>
+            <div id="verseList" class="verse-list"></div>
+          </div>
+
+          <div id="verseEditor" class="panel" hidden>
+            <div class="panel-head">
+              <h2 id="verseEditorTitle">Edit shloka</h2>
+              <button id="deleteVerseBtn" class="btn danger ghost">Delete</button>
+            </div>
+
+            <div class="field-grid three">
+              <label>Shloka ID
+                <input id="verseId" type="text" placeholder="ch13-1">
+              </label>
+              <label>Number
+                <input id="verseNumber" type="number" min="0" step="1">
+              </label>
+              <label>Display label
+                <input id="verseLabel" type="text" placeholder="Optional">
+              </label>
+            </div>
+
+            <label>Simplified English / Phonetic
+              <textarea id="roman" rows="5" placeholder="One verse line per line"></textarea>
+            </label>
+
+            <label>IAST
+              <textarea id="iast" rows="5" placeholder="One verse line per line"></textarea>
+            </label>
+
+            <label>Devanagari
+              <textarea id="devanagari" rows="5" lang="sa-Deva" placeholder="One verse line per line"></textarea>
+            </label>
+
+            <label>Simple meaning
+              <textarea id="meaning" rows="5" placeholder="Explain the full shloka in clear, complete language"></textarea>
+            </label>
+
+            <div class="field-grid two">
+              <label>Roman source
+                <input id="sourceRoman" type="text" placeholder="ASHTANGA HRIDAYAM">
+              </label>
+              <label>Devanagari source
+                <input id="sourceDevanagari" type="text" lang="sa-Deva" placeholder="अष्टाङ्ग हृदयम्">
+              </label>
+            </div>
+
+            <fieldset class="audio-box">
+              <legend>Audio</legend>
+              <div class="field-grid two">
+                <label>Audio path
+                  <input id="audioPath" type="text" placeholder="audio/chapter-13/shloka-01.mp3">
+                </label>
+                <label>Audio MIME type
+                  <select id="audioType">
+                    <option value="">Auto / none</option>
+                    <option value="audio/mpeg">MP3 — audio/mpeg</option>
+                    <option value="audio/mp4">M4A — audio/mp4</option>
+                    <option value="audio/wav">WAV — audio/wav</option>
+                  </select>
+                </label>
+              </div>
+              <div class="audio-helper">
+                <label class="file-picker">Choose audio file
+                  <input id="audioFile" type="file" accept="audio/*">
+                </label>
+                <span id="audioHint">Choosing a file only fills the suggested repository path. It does not upload yet.</span>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div id="previewPanel" class="panel preview-panel" hidden>
+          <div class="panel-head">
+            <h2>Preview</h2>
+            <span class="preview-note">Approximate public-card layout</span>
+          </div>
+          <article class="preview-card">
+            <div class="preview-two-col">
+              <div>
+                <div class="preview-label">English / Phonetic</div>
+                <pre id="previewRoman"></pre>
+                <div class="preview-iast-wrap">
+                  <div class="preview-label center">IAST</div>
+                  <div id="previewIast" class="preview-iast"></div>
+                </div>
+                <div id="previewSourceRoman" class="preview-source"></div>
+              </div>
+              <div>
+                <div class="preview-label">Devanagari</div>
+                <div id="previewDevanagari" class="preview-devanagari"></div>
+                <div id="previewSourceDevanagari" class="preview-source"></div>
+              </div>
+            </div>
+            <div class="preview-meaning">
+              <strong>Simple Meaning</strong>
+              <span id="previewMeaning"></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>This page is intentionally not linked from the public navigation. It currently edits/export JSON locally; GitHub save/upload comes next.</p>
+  </footer>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>

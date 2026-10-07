@@ -1,0 +1,30 @@
+{
+  "_instructions": "Add future chapters/shlokas here. Existing site content remains in index.html during the safe migration. See docs/ADDING_SHLOKAS.md.",
+  "sections": [
+    {
+      "id": "test-section",
+      "title": "Test Chapter",
+      "navLabel": "Test Chapter",
+      "subtitle": "Temporary test section for the new data-driven shloka loader",
+      "verses": [
+        {
+          "id": "test-shloka-1",
+          "number": 1,
+          "roman": [
+            "TEST ROMAN LINE ONE |",
+            "TEST ROMAN LINE TWO ||"
+          ],
+          "iast": [
+            "test roman line one |",
+            "test roman line two ||"
+          ],
+          "devanagari": [
+            "परीक्षण पंक्ति एक ।",
+            "परीक्षण पंक्ति दो ॥"
+          ],
+          "meaning": "This is a temporary test shloka used only to verify that new content can be added from JSON without editing index.html."
+        }
+      ]
+    }
+  ]
+}

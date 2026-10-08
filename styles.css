@@ -916,3 +916,51 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h,64px) + 150px)}
   z-index:48!important;
 }
 #doshabhediyam .chapter-audio-suite{display:none!important}
+
+/* ===== Clean-controller overrides ===== */
+html.route-loading body{visibility:hidden!important}
+.mobile-play{
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.verse-audio,.attached-audio,.chapter-audio-item{
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  flex-wrap:wrap!important;
+}
+.verse-audio audio,.attached-audio audio,.chapter-audio-item audio{
+  position:absolute!important;
+  width:1px!important;height:1px!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+.audio-progress{
+  display:grid!important;
+  grid-template-columns:46px minmax(100px,1fr) 58px!important;
+  gap:7px!important;
+  align-items:center!important;
+  min-width:210px!important;
+}
+.audio-progress input[type="range"]{width:100%!important}
+#doshaadi .chapter-audio-suite{
+  position:relative!important;
+  top:auto!important;
+}
+#doshaadi .chapter-audio-suite.chapter-audio-pinned{
+  position:sticky!important;
+  top:calc(var(--nav-h,64px) + 6px)!important;
+  z-index:48!important;
+}
+#doshabhediyam .chapter-audio-suite{display:none!important}
+@media(max-width:700px){
+  .audio-progress{
+    grid-template-columns:40px minmax(70px,1fr) 54px!important;
+    min-width:0!important;
+    width:100%!important;
+  }
+  .verse-audio,.attached-audio{width:100%!important}
+}

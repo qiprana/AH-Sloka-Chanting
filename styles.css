@@ -897,3 +897,22 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h,64px) + 150px)}
   position:sticky!important;
   top:calc(var(--nav-h,64px) + 7px)!important;
 }
+
+/* ===== Final audio/navigation overrides ===== */
+.mobile-play{
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.verse-audio,.attached-audio,.chapter-audio-item{position:relative!important}
+.audio-progress{display:grid!important}
+#doshaadi .chapter-audio-suite{
+  position:relative!important;
+  top:auto!important;
+}
+#doshaadi .chapter-audio-suite.chapter-audio-pinned{
+  position:sticky!important;
+  top:calc(var(--nav-h,64px) + 6px)!important;
+  z-index:48!important;
+}
+#doshabhediyam .chapter-audio-suite{display:none!important}

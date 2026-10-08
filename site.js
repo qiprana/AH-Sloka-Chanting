@@ -12,6 +12,16 @@ function source(parent,value){
   if(value) parent.appendChild(el('div','source-attribution',value));
 }
 
+function formatDevanagariLines(value){
+  return String(value||'')
+    .replace(/\s*\|\|\s*/g,' ||\n')
+    .replace(/\s*\|\s*/g,' |\n')
+    .replace(/\s*॥\s*/g,' ॥\n')
+    .replace(/\s*।\s*/g,' ।\n')
+    .replace(/\n{2,}/g,'\n')
+    .trim();
+}
+
 function scriptPair(item,{wrapRoman=false,verified=false}={}){
   const pair=el('div','script-pair');
   const rwrap=wrapRoman?el('div','roman-wrap'):null;
@@ -23,7 +33,7 @@ function scriptPair(item,{wrapRoman=false,verified=false}={}){
 
   const dev=el('div',(verified?'chapter-source-verified ':'')+'devanagari-wrap');
   dev.appendChild(el('div','devanagari-label','Devanagari'));
-  dev.appendChild(el('pre','devanagari-text',item.devanagari||''));
+  dev.appendChild(el('pre','devanagari-text',formatDevanagariLines(item.devanagari||'')));
   source(dev,item.sourceDevanagari);
   pair.appendChild(dev);
 

@@ -183,11 +183,22 @@ async function renderStructuredCollection(){
 }
 try{
   await renderStructuredCollection();
-  if(location.hash){
-    requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));
-      if(target) target.scrollIntoView({block:'start'});
-    }));
+  const requestedSection=new URLSearchParams(location.search).get('section');
+  const requestedHash=location.hash ? decodeURIComponent(location.hash.slice(1)) : '';
+  const requestedTarget=requestedSection || requestedHash;
+  if(requestedTarget){
+    const jump=()=>{
+      const target=document.getElementById(requestedTarget);
+      if(!target) return;
+      const nav=document.querySelector('nav');
+      const navH=nav?Math.ceil(nav.getBoundingClientRect().height):64;
+      const y=target.getBoundingClientRect().top+window.scrollY-navH-12;
+      window.scrollTo({top:Math.max(0,y),behavior:'auto'});
+      if(requestedSection) history.replaceState(null,'',location.pathname+'#'+requestedTarget);
+    };
+    requestAnimationFrame(()=>requestAnimationFrame(jump));
+    setTimeout(jump,120);
+    setTimeout(jump,450);
   }
 }catch(err){
   console.error('Structured collection render failed:',err);
@@ -636,4 +647,118 @@ document.addEventListener('DOMContentLoaded', function(){
     setTimeout(updateChapter11Pin,150);
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+
+
+/* ===== Authoritative navigation/audio controller ===== */
+(function(){
+  function fmt(sec){
+    if(!Number.isFinite(sec)||sec<0) return '0:00';
+    sec=Math.floor(sec);
+    return Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0');
+  }
+
+  function ensureAudioUI(){
+    document.querySelectorAll('.verse-audio,.attached-audio,.chapter-audio-item').forEach(function(wrap){
+      const audio=wrap.querySelector('audio');
+      if(!audio) return;
+
+      let btn=wrap.querySelector('.mobile-play');
+      if(!btn){
+        btn=document.createElement('button');
+        btn.type='button';
+        btn.className='mobile-play';
+        btn.textContent='▶ Chanting';
+        wrap.insertBefore(btn,audio);
+      }
+
+      let progress=wrap.querySelector('.audio-progress');
+      if(!progress){
+        progress=document.createElement('div');
+        progress.className='audio-progress';
+        const elapsed=document.createElement('span');
+        elapsed.className='audio-elapsed';
+        elapsed.textContent='0:00';
+        const range=document.createElement('input');
+        range.type='range'; range.min='0'; range.max='1000'; range.step='1'; range.value='0';
+        range.setAttribute('aria-label','Audio position');
+        const remaining=document.createElement('span');
+        remaining.className='audio-time';
+        remaining.textContent='-0:00';
+        progress.append(elapsed,range,remaining);
+        wrap.appendChild(progress);
+
+        const sync=()=>{
+          const d=audio.duration,c=audio.currentTime||0;
+          elapsed.textContent=fmt(c);
+          remaining.textContent=Number.isFinite(d)?('-'+fmt(Math.max(0,d-c))):'-0:00';
+          if(Number.isFinite(d)&&d>0) range.value=String(Math.round(c/d*1000));
+        };
+        ['loadedmetadata','durationchange','timeupdate','ended'].forEach(ev=>audio.addEventListener(ev,sync));
+        range.addEventListener('input',()=>{
+          if(Number.isFinite(audio.duration)&&audio.duration>0){
+            audio.currentTime=(Number(range.value)/1000)*audio.duration;
+          }
+        });
+        sync();
+      }
+    });
+  }
+
+  function syncButtons(){
+    document.querySelectorAll('.mobile-play').forEach(function(btn){
+      const wrap=btn.closest('.verse-audio,.attached-audio,.chapter-audio-item');
+      const audio=wrap&&wrap.querySelector('audio');
+      if(!audio) return;
+      const playing=!audio.paused&&!audio.ended;
+      btn.textContent=playing?'❚❚ Pause':'▶ Chanting';
+      btn.classList.toggle('is-playing',playing);
+    });
+  }
+
+  document.addEventListener('click',function(e){
+    const btn=e.target.closest&&e.target.closest('.mobile-play');
+    if(!btn) return;
+    const wrap=btn.closest('.verse-audio,.attached-audio,.chapter-audio-item');
+    const audio=wrap&&wrap.querySelector('audio');
+    if(!audio) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    document.querySelectorAll('audio').forEach(a=>{if(a!==audio&&!a.paused)a.pause();});
+    if(audio.paused){const p=audio.play();if(p&&p.catch)p.catch(()=>{});}
+    else audio.pause();
+    setTimeout(syncButtons,0);
+  },true);
+
+  document.addEventListener('play',function(e){
+    if(e.target&&e.target.tagName==='AUDIO'){
+      document.querySelectorAll('audio').forEach(a=>{if(a!==e.target&&!a.paused)a.pause();});
+      syncButtons();
+    }
+  },true);
+  document.addEventListener('pause',syncButtons,true);
+  document.addEventListener('ended',syncButtons,true);
+
+  function updateChapter11Player(){
+    const section=document.getElementById('doshaadi');
+    const suite=section&&section.querySelector('.chapter-audio-suite');
+    if(!section||!suite) return;
+    const nav=document.querySelector('nav');
+    const navH=nav?Math.ceil(nav.getBoundingClientRect().height):64;
+    const r=section.getBoundingClientRect();
+    const within=r.top<=navH+8 && r.bottom>navH+90;
+    suite.classList.toggle('chapter-audio-pinned',within);
+    document.documentElement.style.setProperty('--chapter-audio-h',within?Math.ceil(suite.getBoundingClientRect().height)+'px':'0px');
+  }
+
+  function initFinalUI(){
+    ensureAudioUI();
+    syncButtons();
+    updateChapter11Player();
+  }
+  initFinalUI();
+  window.addEventListener('scroll',updateChapter11Player,{passive:true});
+  window.addEventListener('resize',updateChapter11Player,{passive:true});
+  setTimeout(initFinalUI,100);
+  setTimeout(initFinalUI,400);
 })();

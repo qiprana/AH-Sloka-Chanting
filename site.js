@@ -260,24 +260,65 @@ function initAnchors(){
 function initActiveIndex(){
   const strip=$('.shloka-index-links');
   if(!strip)return;
-  const links=$$('a',strip);
+  const links=$('a',strip);
   const rows=links.map(a=>({a,el:document.getElementById(a.getAttribute('href').slice(1))})).filter(x=>x.el);
+  if(!rows.length)return;
+
+  let current=null;
   let ticking=false;
-  const update=()=>{
+
+  function setActive(row){
+    if(!row||row===current)return;
+    current=row;
+    links.forEach(a=>a.classList.toggle('is-current',a===row.a));
+
+    // Keep the active number visible without moving the page itself.
+    const left=row.a.offsetLeft;
+    const right=left+row.a.offsetWidth;
+    const viewLeft=strip.scrollLeft;
+    const viewRight=viewLeft+strip.clientWidth;
+    if(left<viewLeft+12){
+      strip.scrollTo({left:Math.max(0,left-12),behavior:'auto'});
+    }else if(right>viewRight-12){
+      strip.scrollTo({left:Math.max(0,right-strip.clientWidth+12),behavior:'auto'});
+    }
+  }
+
+  function update(){
     ticking=false;
     const navH=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--site-nav-h'))||58;
     const playerH=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--chapter-player-h'))||0;
     const indexH=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--chapter-index-h'))||0;
-    const threshold=window.scrollY+navH+playerH+indexH+40;
-    let active=rows[0];
-    rows.forEach(row=>{if(row.el.offsetTop<=threshold)active=row;});
-    links.forEach(a=>a.classList.toggle('is-current',active&&a===active.a));
-    if(active){
-      const x=active.a.offsetLeft-strip.clientWidth/2+active.a.offsetWidth/2;
-      strip.scrollTo({left:Math.max(0,x),behavior:'auto'});
+    const probeY=navH+playerH+indexH+18;
+
+    // Prefer the verse physically underneath the sticky bars.
+    let active=rows.find(row=>{
+      const r=row.el.getBoundingClientRect();
+      return r.top<=probeY && r.bottom>probeY;
+    });
+
+    // Between cards, keep the most recently passed verse active.
+    if(!active){
+      const passed=rows.filter(row=>row.el.getBoundingClientRect().top<=probeY);
+      active=passed.length?passed[passed.length-1]:rows[0];
     }
-  };
-  window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
+    setActive(active);
+  }
+
+  links.forEach(link=>{
+    link.addEventListener('click',()=>{
+      const row=rows.find(r=>r.a===link);
+      if(row)setActive(row);
+    });
+  });
+
+  window.addEventListener('scroll',()=>{
+    if(!ticking){
+      ticking=true;
+      requestAnimationFrame(update);
+    }
+  },{passive:true});
+  window.addEventListener('resize',update,{passive:true});
   update();
 }
 

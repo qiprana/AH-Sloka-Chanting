@@ -15,15 +15,22 @@ function source(parent,value){
 function formatDevanagariLines(value){
   let s=String(value||'').replace(/\r\n?/g,'\n');
 
-  // Treat double danda / double bars as ONE punctuation unit first.
-  s=s.replace(/[ \t]*\|[ \t]*\|[ \t]*/g,'\u00A0||\n');
-  s=s.replace(/[ \t]*॥[ \t]*/g,'\u00A0॥\n');
+  // Protect double punctuation so the single-bar pass cannot split it.
+  const DOUBLE_BAR='\uE000';
+  const DOUBLE_DANDA='\uE001';
 
-  // Then handle single danda / single bar.
+  s=s.replace(/[ \t]*\|[ \t]*\|[ \t]*/g,DOUBLE_BAR);
+  s=s.replace(/[ \t]*॥[ \t]*/g,DOUBLE_DANDA);
+
+  // Single verse separators: keep punctuation on the preceding line.
   s=s.replace(/[ \t]*\|[ \t]*/g,'\u00A0|\n');
   s=s.replace(/[ \t]*।[ \t]*/g,'\u00A0।\n');
 
-  // Never allow punctuation-only lines.
+  // Restore double punctuation only after single punctuation has been handled.
+  s=s.replaceAll(DOUBLE_BAR,'\u00A0||\n');
+  s=s.replaceAll(DOUBLE_DANDA,'\u00A0॥\n');
+
+  // Defensive cleanup: punctuation can never occupy a line by itself.
   s=s.replace(/\n[ \t]*(\|\||\||॥|।)[ \t]*(?=\n|$)/g,' $1');
 
   return s.replace(/\n{2,}/g,'\n').trim();

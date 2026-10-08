@@ -49,3 +49,56 @@ footer{text-align:center}
   .verse-audio,.attached-audio{width:100%!important}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.home-card{transition:none}}
+
+/* Navigation refinement */
+.site-nav{
+  background:rgba(247,250,247,.94)!important;
+  border-bottom:1px solid rgba(111,137,120,.22)!important;
+  box-shadow:0 6px 18px rgba(44,64,52,.045);
+}
+.site-nav .nav-inner{
+  max-width:1120px!important;
+  padding:7px 16px!important;
+  gap:4px!important;
+  scrollbar-width:none!important;
+}
+.site-nav .nav-inner::-webkit-scrollbar{display:none}
+.site-nav a{
+  padding:8px 12px!important;
+  border-radius:10px!important;
+  font-size:.79rem!important;
+  font-weight:720!important;
+  color:#45534b!important;
+  background:transparent!important;
+  border:1px solid transparent!important;
+  transition:background .15s ease,color .15s ease,border-color .15s ease!important;
+}
+.site-nav a:hover{
+  background:rgba(231,239,233,.72)!important;
+  color:#26372e!important;
+}
+.site-nav a.active{
+  background:#e7efe9!important;
+  border-color:#c8d6cc!important;
+  color:#203129!important;
+  box-shadow:inset 0 -2px 0 rgba(82,112,92,.25);
+}
+
+/* Cleaner horizontal shloka index */
+.shloka-index-links{
+  scrollbar-width:none!important;
+  padding-bottom:2px!important;
+}
+.shloka-index-links::-webkit-scrollbar{display:none}
+.shloka-index-links a{
+  transition:background .12s ease,color .12s ease,border-color .12s ease!important;
+}
+.shloka-index-links a.is-current{
+  background:#5a4938!important;
+  color:#fff!important;
+  border-color:#5a4938!important;
+}
+@media(max-width:700px){
+  .site-nav .nav-inner{padding:6px 10px!important}
+  .site-nav a{padding:7px 10px!important;font-size:.75rem!important}
+}

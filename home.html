@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ayurvedic Shloka Chanting</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.home-page{min-height:100vh;display:flex;flex-direction:column}
+.home-main{width:min(1080px,calc(100% - 28px));margin:0 auto;padding:42px 0 70px}
+.home-intro{text-align:center;max-width:760px;margin:0 auto 34px}
+.home-intro h1{margin:.2rem 0 .7rem}.home-intro p{color:var(--muted);font:500 1rem/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
+.home-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.home-card{display:block;text-decoration:none;color:inherit;background:rgba(255,254,249,.96);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow);transition:transform .16s ease,box-shadow .16s ease}
+.home-card:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(40,70,54,.13)}
+.home-card .eyebrow{font:800 .72rem/1.2 system-ui,-apple-system,Segoe UI,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.home-card h2{margin:7px 0 8px;font-size:1.55rem}
+.home-card p{margin:0;color:var(--muted);font:500 .94rem/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+.enter{display:inline-flex;margin-top:16px;font:800 .86rem system-ui,-apple-system,Segoe UI,sans-serif;color:var(--accent)}
+.home-footer{text-align:center;color:var(--muted);font:500 .82rem system-ui,-apple-system,Segoe UI,sans-serif;padding:0 18px 32px}
+@media(max-width:700px){.home-grid{grid-template-columns:1fr}.home-main{padding-top:26px}.home-card{padding:19px}}
+</style>
+</head>
+<body class="home-page">
+<div aria-hidden="true" class="sacred-bg"><span class="geo g1"></span><span class="geo g2"></span><span class="geo g3"></span><span class="geo g4"></span></div>
+<main class="home-main">
+  <section class="home-intro">
+    <p class="collection-kicker">Study • Listen • Chant</p>
+    <h1>Ayurvedic Shloka Chanting</h1>
+    <p>Explore Sanskrit shlokas with Simplified Phonetic Roman, Devanagari, IAST, meanings, indexed navigation, and chanting audio.</p>
+    <p class="byline">Information Collections and Chanting by Vaidya Jay Parla</p>
+  </section>
+  <section class="home-grid" aria-label="Collection sections">
+    <a class="home-card" href="index.html#reading-guide"><span class="eyebrow">Reading Guide</span><h2>How to Read</h2><p>Use the compact Sanskrit pronunciation guide before beginning the collection.</p><span class="enter">Open guide →</span></a>
+    <a class="home-card" href="index.html#herbs"><span class="eyebrow">Herbs</span><h2>Herbal Shlokas</h2><p>Browse the herb collection with Roman, Devanagari, IAST and chanting recordings.</p><span class="enter">Explore herbs →</span></a>
+    <a class="home-card" href="index.html#doshaadi"><span class="eyebrow">Ashtanga Hridayam • Chapter 11</span><h2>Doshaadi Vignyaaneeyam</h2><p>Indexed shlokas with normal and slow continuous chapter chanting.</p><span class="enter">Open Chapter 11 →</span></a>
+    <a class="home-card" href="index.html#doshabhediyam"><span class="eyebrow">Ashtanga Hridayam • Chapter 12</span><h2>Doshabhediyam</h2><p>Indexed Chapter 12 shlokas with individual chanting audio where available.</p><span class="enter">Open Chapter 12 →</span></a>
+  </section>
+</main>
+<footer class="home-footer">Information Collections and Chanting by Vaidya Jay Parla</footer>
+</body>
+</html>

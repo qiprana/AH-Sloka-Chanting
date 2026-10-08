@@ -13,13 +13,20 @@ function source(parent,value){
 }
 
 function formatDevanagariLines(value){
-  return String(value||'')
-    .replace(/\s*\|\|\s*/g,'\u00A0||\n')
-    .replace(/\s*\|\s*/g,'\u00A0|\n')
-    .replace(/\s*॥\s*/g,'\u00A0॥\n')
-    .replace(/\s*।\s*/g,'\u00A0।\n')
-    .replace(/\n{2,}/g,'\n')
-    .trim();
+  let s=String(value||'').replace(/\r\n?/g,'\n');
+
+  // Treat double danda / double bars as ONE punctuation unit first.
+  s=s.replace(/[ \t]*\|[ \t]*\|[ \t]*/g,'\u00A0||\n');
+  s=s.replace(/[ \t]*॥[ \t]*/g,'\u00A0॥\n');
+
+  // Then handle single danda / single bar.
+  s=s.replace(/[ \t]*\|[ \t]*/g,'\u00A0|\n');
+  s=s.replace(/[ \t]*।[ \t]*/g,'\u00A0।\n');
+
+  // Never allow punctuation-only lines.
+  s=s.replace(/\n[ \t]*(\|\||\||॥|।)[ \t]*(?=\n|$)/g,' $1');
+
+  return s.replace(/\n{2,}/g,'\n').trim();
 }
 
 function scriptPair(item,{wrapRoman=false,verified=false}={}){

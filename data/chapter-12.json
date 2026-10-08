@@ -9,7 +9,7 @@
     {
       "id": "doshabhediyam-introduction",
       "kind": "introduction",
-      "number": null,
+      "number": 0,
       "label": "Introduction",
       "audio": {
         "src": "audio/audio_13.m4a",

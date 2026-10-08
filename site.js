@@ -14,10 +14,10 @@ function source(parent,value){
 
 function formatDevanagariLines(value){
   return String(value||'')
-    .replace(/\s*\|\|\s*/g,' ||\n')
-    .replace(/\s*\|\s*/g,' |\n')
-    .replace(/\s*॥\s*/g,' ॥\n')
-    .replace(/\s*।\s*/g,' ।\n')
+    .replace(/\s*\|\|\s*/g,'\u00A0||\n')
+    .replace(/\s*\|\s*/g,'\u00A0|\n')
+    .replace(/\s*॥\s*/g,'\u00A0॥\n')
+    .replace(/\s*।\s*/g,'\u00A0।\n')
     .replace(/\n{2,}/g,'\n')
     .trim();
 }
@@ -270,7 +270,7 @@ function initAnchors(){
 function initActiveIndex(){
   const strip=$('.shloka-index-links');
   if(!strip)return;
-  const links=$('a',strip);
+  const links=Array.from(strip.querySelectorAll('a'));
   const rows=links.map(a=>({a,el:document.getElementById(a.getAttribute('href').slice(1))})).filter(x=>x.el);
   if(!rows.length)return;
 
@@ -350,17 +350,30 @@ function initSearch(){
 }
 
 async function init(){
-  await renderPage();
-  setHeights();
-  initAudio();
-  initAnchors();
-  initActiveIndex();
-  initSearch();
-  window.addEventListener('resize',setHeights,{passive:true});
+  try{
+    await renderPage();
+  }catch(err){
+    console.error('Collection data could not be loaded:',err);
+    const main=$('main');
+    if(main){
+      const m=el('div','no-results','The collection data could not be loaded. Please refresh.');
+      m.style.display='block';
+      main.prepend(m);
+    }
+    return;
+  }
+
+  const enhancements=[
+    ['layout',setHeights],
+    ['audio',initAudio],
+    ['anchors',initAnchors],
+    ['active index',initActiveIndex],
+    ['search',initSearch]
+  ];
+  enhancements.forEach(([name,fn])=>{
+    try{fn();}catch(err){console.warn(name+' enhancement failed:',err);}
+  });
+  window.addEventListener('resize',()=>{try{setHeights();}catch(e){}},{passive:true});
 }
 
-init().catch(err=>{
-  console.error(err);
-  const main=$('main');
-  if(main){const m=el('div','no-results','The page could not be loaded. Please refresh.');m.style.display='block';main.prepend(m);}
-});
+init();

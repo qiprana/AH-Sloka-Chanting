@@ -102,3 +102,30 @@ footer{text-align:center}
   .site-nav .nav-inner{padding:6px 10px!important}
   .site-nav a{padding:7px 10px!important;font-size:.75rem!important}
 }
+
+/* Slightly stronger page heading area */
+.compact-hero{
+  padding:38px 20px 30px!important;
+  min-height:168px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.compact-hero h1{
+  font-size:clamp(2.25rem,5.4vw,4rem)!important;
+  margin-bottom:8px!important;
+}
+.compact-hero .subtitle{
+  font-size:1rem!important;
+  line-height:1.45!important;
+}
+.compact-hero .byline{
+  margin-top:8px!important;
+  font-size:.92rem!important;
+}
+@media(max-width:700px){
+  .compact-hero{
+    padding:28px 14px 23px!important;
+    min-height:142px;
+  }
+}

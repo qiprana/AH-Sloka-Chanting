@@ -236,3 +236,113 @@ footer{text-align:center}
     font-size:.9rem!important;
   }
 }
+
+/* Site-wide search integrated with the navigation */
+.site-nav{overflow:visible!important}
+.site-nav .nav-shell{max-width:1280px;margin:0 auto;position:relative}
+.site-search-row{
+  position:relative;
+  width:min(520px,calc(100% - 28px));
+  margin:0 auto;
+  padding:0 0 10px;
+  z-index:75;
+}
+.site-search-box{
+  height:42px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:0 13px;
+  border:1px solid #d7ccbd;
+  border-radius:999px;
+  background:rgba(255,253,248,.98);
+  box-shadow:0 2px 9px rgba(60,45,30,.055);
+}
+.site-search-icon{
+  flex:0 0 auto;
+  color:#806b56;
+  font:700 1.25rem/1 Georgia,'Times New Roman',serif;
+  transform:rotate(-18deg);
+}
+#siteSearch{
+  flex:1;
+  min-width:0;
+  height:38px;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  background:transparent!important;
+  padding:0!important;
+  color:#3f392f;
+  font:600 .91rem/1.2 system-ui,-apple-system,Segoe UI,sans-serif;
+}
+#siteSearch::placeholder{color:#91877b}
+.site-search-count{
+  min-width:18px;
+  color:#7a6d60;
+  text-align:right;
+  font:700 .74rem/1 system-ui,-apple-system,Segoe UI,sans-serif;
+}
+.site-search-results{
+  position:absolute;
+  top:46px;
+  left:0;
+  right:0;
+  max-height:min(62vh,520px);
+  overflow:auto;
+  border:1px solid #d7ccbd;
+  border-radius:15px;
+  background:#fffdf8;
+  box-shadow:0 16px 34px rgba(49,40,31,.16);
+  padding:7px;
+  z-index:100;
+}
+.site-search-results[hidden]{display:none!important}
+.site-search-list{display:grid;gap:3px}
+.site-search-result{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:10px;
+  align-items:center;
+  padding:10px 11px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#3f392f;
+}
+.site-search-result:hover,
+.site-search-result:focus{
+  background:#f2ebe1;
+  outline:none;
+}
+.site-search-result-title{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font:700 .9rem/1.25 Georgia,'Times New Roman',serif;
+}
+.site-search-result-section{
+  color:#807265;
+  white-space:nowrap;
+  font:650 .69rem/1.2 system-ui,-apple-system,Segoe UI,sans-serif;
+}
+.site-search-empty,.site-search-more{
+  padding:11px;
+  color:#776b60;
+  text-align:center;
+  font:600 .8rem/1.35 system-ui,-apple-system,Segoe UI,sans-serif;
+}
+.page-tools{display:none!important}
+
+@media(max-width:720px){
+  .site-search-row{
+    width:calc(100% - 20px);
+    padding-bottom:8px;
+  }
+  .site-search-box{height:40px}
+  .site-search-results{top:44px}
+  .site-search-result{
+    grid-template-columns:1fr;
+    gap:3px;
+  }
+  .site-search-result-section{white-space:normal}
+}

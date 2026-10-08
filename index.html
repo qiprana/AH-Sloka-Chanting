@@ -12,14 +12,30 @@
 <p class="subtitle">Study • Listen • Chant</p>
 <p class="byline">Collections and Chanting by Vaidya Jay Parla</p>
 </div></header>
-<nav class="site-nav"><div class="nav-inner">
-<a class="active" href="index.html">Home</a>
-<a href="guide.html">How to Read</a>
-<a href="foundational.html">Invocations &amp; Foundational Shlokas</a>
-<a href="herbs.html">Herbs</a>
-<a href="chapter-11.html">Doshaadi Vignyaaneeyam</a>
-<a href="chapter-12.html">Doshabhediyam</a>
-</div></nav>
+<nav class="site-nav">
+  <div class="nav-shell">
+    <div class="nav-inner">
+      <a class="active" href="index.html">Home</a>
+      <a href="guide.html">How to Read</a>
+      <a href="foundational.html">Invocations &amp; Foundational Shlokas</a>
+      <a href="herbs.html">Herbs</a>
+      <a href="chapter-11.html">Doshaadi Vignyaaneeyam</a>
+      <a href="chapter-12.html">Doshabhediyam</a>
+    </div>
+    <div class="site-search-row">
+      <div class="site-search-box">
+        <span class="site-search-icon" aria-hidden="true">⌕</span>
+        <input id="siteSearch" type="search" autocomplete="off"
+          aria-label="Search the entire chanting collection"
+          aria-controls="siteSearchResults"
+          aria-expanded="false"
+          placeholder="Search all shlokas, herbs, Sanskrit…">
+        <span id="siteSearchCount" class="site-search-count" aria-live="polite"></span>
+      </div>
+      <div id="siteSearchResults" class="site-search-results" hidden></div>
+    </div>
+  </div>
+</nav>
 <main class="home-main">
 <section class="home-intro">
 <p>Explore the collection by topic. Each section now opens as its own page for faster loading, more reliable audio, and simpler navigation.</p>
@@ -40,4 +56,5 @@
  if(map[id]) location.replace(map[id]);
 })();
 </script>
+<script type="module" src="site.js"></script>
 </body></html>

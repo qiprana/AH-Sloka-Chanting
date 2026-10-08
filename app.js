@@ -141,12 +141,17 @@ function renderChapter(root,data){
     const card=ce('div',cls); card.id=v.id||'';
 
     const head=ce('div','verse-head');
-    if(Number.isFinite(v.number)) head.appendChild(ce('span','verse-number','Shloka '+v.number));
-    else head.appendChild(ce('span','verse-label',v.label||v.kind||''));
+    if(Number.isFinite(v.number)){
+      head.appendChild(ce('span','verse-number','Shloka '+v.number+(v.kind==='introduction'?' · Introduction':'')));
+    }else head.appendChild(ce('span','verse-label',v.label||v.kind||''));
     const audioWrap=ce('span','verse-audio');
     if(v.audio && v.audio.src){
       if(v.audioLabel) audioWrap.appendChild(ce('span','chant-label',v.audioLabel));
-      const a=document.createElement('audio'); a.controls=true; a.preload='none';
+      const play=ce('button','mobile-play','▶ Chanting');
+      play.type='button';
+      play.setAttribute('aria-label','Play chanting '+(v.label||('Shloka '+v.number)));
+      audioWrap.appendChild(play);
+      const a=document.createElement('audio'); a.controls=true; a.preload='metadata';
       const src=document.createElement('source'); src.src=v.audio.src; if(v.audio.type)src.type=v.audio.type;
       a.appendChild(src); audioWrap.appendChild(a);
     }else{
@@ -178,6 +183,12 @@ async function renderStructuredCollection(){
 }
 try{
   await renderStructuredCollection();
+  if(location.hash){
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if(target) target.scrollIntoView({block:'start'});
+    }));
+  }
 }catch(err){
   console.error('Structured collection render failed:',err);
   const main=document.querySelector('main');
@@ -604,17 +615,25 @@ document.addEventListener('DOMContentLoaded', function(){
       sync();
     });
   }
-  function sizeStickyAudio(){
-    var suite=document.querySelector('#doshaadi .chapter-audio-suite');
-    var h=suite?Math.ceil(suite.getBoundingClientRect().height):0;
-    document.documentElement.style.setProperty('--chapter-audio-h',h+'px');
+  function updateChapter11Pin(){
+    var section=document.getElementById('doshaadi');
+    var suite=section && section.querySelector('.chapter-audio-suite');
+    if(!section||!suite) return;
+    var nav=document.querySelector('nav');
+    var navH=nav?Math.ceil(nav.getBoundingClientRect().height):64;
+    var r=section.getBoundingClientRect();
+    var h=Math.ceil(suite.getBoundingClientRect().height);
+    var active=r.top<=navH+8 && r.bottom>navH+h+40;
+    suite.classList.toggle('chapter-audio-pinned',active);
+    document.documentElement.style.setProperty('--chapter-audio-h',(active?h:0)+'px');
   }
   function init(){
     initAudioProgress();
-    sizeStickyAudio();
-    window.addEventListener('resize',sizeStickyAudio,{passive:true});
-    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(sizeStickyAudio);
-    setTimeout(sizeStickyAudio,150);
+    updateChapter11Pin();
+    window.addEventListener('scroll',updateChapter11Pin,{passive:true});
+    window.addEventListener('resize',updateChapter11Pin,{passive:true});
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(updateChapter11Pin);
+    setTimeout(updateChapter11Pin,150);
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();

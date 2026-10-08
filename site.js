@@ -102,6 +102,7 @@ function renderOpening(root,data){
   const inv=items.find(x=>x.kind==='invocation');
   if(inv){
     const card=el('div','intro-card searchable');
+    card.id=inv.id||'dhanvantari-japa';
     const aw=audioWrap(inv.audio,inv.audioLabel||'Dhanvantari Invocation','attached-audio');
     if(aw) card.appendChild(aw);
     if(inv.title) card.appendChild(el('div','shloka-title',inv.title));
@@ -346,22 +347,187 @@ function initActiveIndex(){
   update();
 }
 
-function initSearch(){
-  const q=$('#search'),count=$('#searchCount'),none=$('#noResults');
-  if(!q)return;
-  const cards=$$('.searchable');
-  q.addEventListener('input',()=>{
-    const term=q.value.trim().toLowerCase();
-    let hits=0;
-    cards.forEach(c=>{
-      const ok=!term||(c.textContent||'').toLowerCase().includes(term);
-      c.hidden=!ok;
-      if(ok&&term)hits++;
+function foldSearch(value){
+  let s=String(value||'').toLowerCase();
+  try{s=s.normalize('NFD').replace(/[\u0300-\u036f]/g,'');}catch(e){}
+  return s.replace(/[–—]/g,'-').replace(/\s+/g,' ').trim();
+}
+
+let siteSearchIndexPromise=null;
+
+function searchText(item){
+  return [
+    item.title,item.label,item.roman,item.devanagari,item.iast,item.meaning,
+    item.sourceRoman,item.sourceDevanagari
+  ].filter(Boolean).join(' ');
+}
+
+function buildSiteSearchIndex(){
+  if(siteSearchIndexPromise) return siteSearchIndexPromise;
+
+  siteSearchIndexPromise=Promise.all([
+    loadJson('data/opening.json'),
+    loadJson('data/herbs.json'),
+    loadJson('data/chapter-11.json'),
+    loadJson('data/chapter-12.json'),
+    fetch('guide.html',{cache:'no-store'}).then(r=>r.ok?r.text():'')
+  ]).then(([opening,herbs,ch11,ch12,guideHtml])=>{
+    const out=[];
+
+    (opening.items||[]).forEach((item,i)=>{
+      out.push({
+        section:'Invocations & Foundational Shlokas',
+        title:item.title || (item.kind==='invocation'?'Dhanvantari Japa':'Foundational Shloka '+i),
+        href:'foundational.html#'+(item.id||'opening'),
+        text:foldSearch(searchText(item))
+      });
     });
-    if(count)count.textContent=term?(hits+' match'+(hits===1?'':'es')):'';
-    if(none)none.style.display=term&&hits===0?'block':'none';
+
+    (herbs.items||[]).forEach(item=>{
+      out.push({
+        section:'Herbs',
+        title:item.title||item.id,
+        href:'herbs.html#'+item.id,
+        text:foldSearch(searchText(item))
+      });
+    });
+
+    (ch11.verses||[]).forEach(v=>{
+      out.push({
+        section:'Doshaadi Vignyaaneeyam · Chapter 11',
+        title:Number.isFinite(v.number)?'Shloka '+v.number:(v.label||'Chapter 11'),
+        href:'chapter-11.html#'+v.id,
+        text:foldSearch(searchText(v)+' Doshaadi Vignyaaneeyam Ashtanga Hridayam Sutrasthana Chapter 11')
+      });
+    });
+
+    (ch12.verses||[]).forEach(v=>{
+      out.push({
+        section:'Doshabhediyam · Chapter 12',
+        title:Number.isFinite(v.number)?'Shloka '+v.number:(v.label||'Chapter 12'),
+        href:'chapter-12.html#'+v.id,
+        text:foldSearch(searchText(v)+' Doshabhediyam Ashtanga Hridayam Sutrasthana Chapter 12')
+      });
+    });
+
+    if(guideHtml){
+      const doc=new DOMParser().parseFromString(guideHtml,'text/html');
+      const guideText=doc.querySelector('main')?.textContent||'';
+      out.push({
+        section:'Reading Guide',
+        title:'How to Read the Romanized Sanskrit',
+        href:'guide.html',
+        text:foldSearch(guideText+' IAST pronunciation Romanized Sanskrit')
+      });
+    }
+
+    return out;
+  }).catch(err=>{
+    siteSearchIndexPromise=null;
+    throw err;
+  });
+
+  return siteSearchIndexPromise;
+}
+
+function initSearch(){
+  const input=$('#siteSearch');
+  const panel=$('#siteSearchResults');
+  const count=$('#siteSearchCount');
+  if(!input||!panel) return;
+
+  let requestId=0;
+
+  function close(){
+    panel.hidden=true;
+    panel.innerHTML='';
+    input.setAttribute('aria-expanded','false');
+    if(count) count.textContent='';
+  }
+
+  function renderResults(results,query){
+    panel.innerHTML='';
+    if(!results.length){
+      panel.appendChild(el('div','site-search-empty','No matches found.'));
+      panel.hidden=false;
+      input.setAttribute('aria-expanded','true');
+      if(count) count.textContent='0';
+      return;
+    }
+
+    const list=el('div','site-search-list');
+    results.slice(0,14).forEach(result=>{
+      const a=el('a','site-search-result');
+      a.href=result.href;
+
+      const title=el('span','site-search-result-title',result.title);
+      const section=el('span','site-search-result-section',result.section);
+      a.append(title,section);
+      list.appendChild(a);
+    });
+
+    panel.appendChild(list);
+    if(results.length>14){
+      panel.appendChild(el('div','site-search-more',(results.length-14)+' more matches — refine your search'));
+    }
+    panel.hidden=false;
+    input.setAttribute('aria-expanded','true');
+    if(count) count.textContent=String(results.length);
+  }
+
+  async function run(){
+    const raw=input.value.trim();
+    const query=foldSearch(raw);
+    if(!query){close();return;}
+
+    const mine=++requestId;
+    if(count) count.textContent='…';
+
+    try{
+      const index=await buildSiteSearchIndex();
+      if(mine!==requestId) return;
+
+      const terms=query.split(' ').filter(Boolean);
+      const matches=index.filter(item=>terms.every(term=>item.text.includes(term)));
+
+      // Prioritize title/section matches, then content matches.
+      matches.sort((a,b)=>{
+        const aa=foldSearch(a.title+' '+a.section);
+        const bb=foldSearch(b.title+' '+b.section);
+        const as=terms.reduce((n,t)=>n+(aa.includes(t)?1:0),0);
+        const bs=terms.reduce((n,t)=>n+(bb.includes(t)?1:0),0);
+        return bs-as;
+      });
+
+      renderResults(matches,raw);
+    }catch(err){
+      console.warn('Site search could not load:',err);
+      panel.innerHTML='';
+      panel.appendChild(el('div','site-search-empty','Search is temporarily unavailable.'));
+      panel.hidden=false;
+      input.setAttribute('aria-expanded','true');
+      if(count) count.textContent='';
+    }
+  }
+
+  input.addEventListener('focus',()=>{
+    if(input.value.trim()) run();
+    else buildSiteSearchIndex().catch(()=>{});
+  });
+  input.addEventListener('input',run);
+  input.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){input.value='';close();input.blur();}
+    if(e.key==='Enter'){
+      const first=$('.site-search-result',panel);
+      if(first){e.preventDefault();location.href=first.href;}
+    }
+  });
+
+  document.addEventListener('click',e=>{
+    if(!e.target.closest('.site-search-row')) close();
   });
 }
+
 
 async function init(){
   try{

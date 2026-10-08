@@ -566,3 +566,55 @@ document.addEventListener('DOMContentLoaded', function(){
   else loadExtraShlokas();
 })();
 
+
+
+/* ===== Unified audio progress / seek controls and sticky Chapter 11 sizing ===== */
+(function(){
+  function fmt(sec){
+    if(!Number.isFinite(sec)||sec<0) return '0:00';
+    sec=Math.floor(sec);
+    var m=Math.floor(sec/60), s=sec%60;
+    return m+':'+String(s).padStart(2,'0');
+  }
+  function initAudioProgress(){
+    document.querySelectorAll('audio').forEach(function(a){
+      var wrap=a.closest('.attached-audio,.verse-audio,.chapter-audio-item');
+      if(!wrap || wrap.querySelector('.audio-progress')) return;
+
+      var box=document.createElement('div'); box.className='audio-progress';
+      var elapsed=document.createElement('span'); elapsed.className='audio-elapsed'; elapsed.textContent='0:00';
+      var range=document.createElement('input'); range.type='range'; range.min='0'; range.max='1000'; range.value='0'; range.step='1';
+      range.setAttribute('aria-label','Audio position');
+      var remaining=document.createElement('span'); remaining.className='audio-time'; remaining.textContent='-0:00';
+      box.append(elapsed,range,remaining); wrap.appendChild(box);
+
+      function sync(){
+        var d=a.duration, c=a.currentTime||0;
+        elapsed.textContent=fmt(c);
+        remaining.textContent=Number.isFinite(d)?('-'+fmt(Math.max(0,d-c))):'-0:00';
+        if(Number.isFinite(d)&&d>0) range.value=String(Math.round((c/d)*1000));
+      }
+      a.addEventListener('loadedmetadata',sync);
+      a.addEventListener('durationchange',sync);
+      a.addEventListener('timeupdate',sync);
+      a.addEventListener('ended',sync);
+      range.addEventListener('input',function(){
+        if(Number.isFinite(a.duration)&&a.duration>0) a.currentTime=(Number(range.value)/1000)*a.duration;
+      });
+      sync();
+    });
+  }
+  function sizeStickyAudio(){
+    var suite=document.querySelector('#doshaadi .chapter-audio-suite');
+    var h=suite?Math.ceil(suite.getBoundingClientRect().height):0;
+    document.documentElement.style.setProperty('--chapter-audio-h',h+'px');
+  }
+  function init(){
+    initAudioProgress();
+    sizeStickyAudio();
+    window.addEventListener('resize',sizeStickyAudio,{passive:true});
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(sizeStickyAudio);
+    setTimeout(sizeStickyAudio,150);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();

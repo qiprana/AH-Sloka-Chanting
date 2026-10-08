@@ -20,6 +20,15 @@
 
 
 <link rel="stylesheet" href="styles.css"/>
+<script>
+(function(){
+  try{
+    const p=new URLSearchParams(location.search);
+    if(p.get('section') || location.hash) document.documentElement.classList.add('route-loading');
+  }catch(e){}
+})();
+</script>
+<style>html.route-loading body{visibility:hidden}</style>
 </head>
 <body><div aria-hidden="true" class="sacred-bg"><span class="geo g1"></span><span class="geo g2"></span><span class="geo g3"></span><span class="geo g4"></span><span class="geo g5"></span><span class="geo g6"></span><span class="geo g7"></span><span class="geo g8"></span></div>
 <header><div class="hero"><p class="collection-kicker">A study and chanting collection</p><h1>Ayurvedic Shloka Chanting</h1><p class="byline">Information Collections and Chanting by Vaidya Jay Parla</p><p class="subtitle">Herbs • Doshaadi Vignyaaneeyam • Doshabhediyam • Indexed Shlokas</p></div></header>

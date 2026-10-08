@@ -353,6 +353,82 @@ function foldSearch(value){
   return s.replace(/[–—]/g,'-').replace(/\s+/g,' ').trim();
 }
 
+function appendHighlightedText(parent,text,query){
+  const value=String(text||'');
+  const terms=String(query||'').trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if(!terms.length){ parent.textContent=value; return; }
+
+  const lower=value.toLowerCase();
+  let pos=0;
+
+  while(pos<value.length){
+    let bestIndex=-1;
+    let bestTerm='';
+
+    terms.forEach(term=>{
+      const found=lower.indexOf(term,pos);
+      if(found!==-1 && (bestIndex===-1 || found<bestIndex || (found===bestIndex && term.length>bestTerm.length))){
+        bestIndex=found;
+        bestTerm=term;
+      }
+    });
+
+    if(bestIndex===-1){
+      parent.appendChild(document.createTextNode(value.slice(pos)));
+      break;
+    }
+
+    if(bestIndex>pos) parent.appendChild(document.createTextNode(value.slice(pos,bestIndex)));
+    parent.appendChild(el('mark','search-match',value.slice(bestIndex,bestIndex+bestTerm.length)));
+    pos=bestIndex+bestTerm.length;
+  }
+}
+
+function makeSearchSnippet(text,query){
+  const value=String(text||'').replace(/\s+/g,' ').trim();
+  if(!value) return '';
+
+  const terms=String(query||'').trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const lower=value.toLowerCase();
+  let first=-1;
+
+  terms.forEach(term=>{
+    const found=lower.indexOf(term);
+    if(found!==-1 && (first===-1 || found<first)) first=found;
+  });
+
+  if(first===-1) first=0;
+  const start=Math.max(0,first-55);
+  const end=Math.min(value.length,start+180);
+  return (start>0?'…':'')+value.slice(start,end)+(end<value.length?'…':'');
+}
+
+function highlightDestination(){
+  const query=new URLSearchParams(location.search).get('q');
+  if(!query) return;
+
+  let target=null;
+  if(location.hash){
+    try{ target=document.getElementById(decodeURIComponent(location.hash.slice(1))); }catch(e){}
+  }
+  if(!target) target=$('main');
+  if(!target) return;
+
+  const walker=document.createTreeWalker(target,NodeFilter.SHOW_TEXT);
+  const nodes=[];
+  while(walker.nextNode()){
+    const node=walker.currentNode;
+    const parent=node.parentElement;
+    if(parent && !parent.closest('script,style,input,textarea,audio,source,mark')) nodes.push(node);
+  }
+
+  nodes.forEach(node=>{
+    const holder=document.createDocumentFragment();
+    appendHighlightedText(holder,node.nodeValue,query);
+    if(holder.querySelector && holder.querySelector('mark')) node.replaceWith(holder);
+  });
+}
+
 let siteSearchIndexPromise=null;
 
 function searchText(item){
@@ -379,7 +455,8 @@ function buildSiteSearchIndex(){
         section:'Invocations & Foundational Shlokas',
         title:item.title || (item.kind==='invocation'?'Dhanvantari Japa':'Foundational Shloka '+i),
         href:'foundational.html#'+(item.id||'opening'),
-        text:foldSearch(searchText(item))
+        text:foldSearch(searchText(item)),
+        raw:searchText(item)
       });
     });
 
@@ -388,7 +465,8 @@ function buildSiteSearchIndex(){
         section:'Herbs',
         title:item.title||item.id,
         href:'herbs.html#'+item.id,
-        text:foldSearch(searchText(item))
+        text:foldSearch(searchText(item)),
+        raw:searchText(item)
       });
     });
 
@@ -397,7 +475,8 @@ function buildSiteSearchIndex(){
         section:'Doshaadi Vignyaaneeyam · Chapter 11',
         title:Number.isFinite(v.number)?'Shloka '+v.number:(v.label||'Chapter 11'),
         href:'chapter-11.html#'+v.id,
-        text:foldSearch(searchText(v)+' Doshaadi Vignyaaneeyam Ashtanga Hridayam Sutrasthana Chapter 11')
+        text:foldSearch(searchText(v)+' Doshaadi Vignyaaneeyam Ashtanga Hridayam Sutrasthana Chapter 11'),
+        raw:searchText(v)
       });
     });
 
@@ -406,7 +485,8 @@ function buildSiteSearchIndex(){
         section:'Doshabhediyam · Chapter 12',
         title:Number.isFinite(v.number)?'Shloka '+v.number:(v.label||'Chapter 12'),
         href:'chapter-12.html#'+v.id,
-        text:foldSearch(searchText(v)+' Doshabhediyam Ashtanga Hridayam Sutrasthana Chapter 12')
+        text:foldSearch(searchText(v)+' Doshabhediyam Ashtanga Hridayam Sutrasthana Chapter 12'),
+        raw:searchText(v)
       });
     });
 
@@ -417,7 +497,8 @@ function buildSiteSearchIndex(){
         section:'Reading Guide',
         title:'How to Read the Romanized Sanskrit',
         href:'guide.html',
-        text:foldSearch(guideText+' IAST pronunciation Romanized Sanskrit')
+        text:foldSearch(guideText+' IAST pronunciation Romanized Sanskrit'),
+        raw:guideText
       });
     }
 
@@ -435,6 +516,9 @@ function initSearch(){
   const panel=$('#siteSearchResults');
   const count=$('#siteSearchCount');
   if(!input||!panel) return;
+
+  const incomingQuery=new URLSearchParams(location.search).get('q')||'';
+  if(incomingQuery) input.value=incomingQuery;
 
   let requestId=0;
 
@@ -458,11 +542,27 @@ function initSearch(){
     const list=el('div','site-search-list');
     results.slice(0,14).forEach(result=>{
       const a=el('a','site-search-result');
-      a.href=result.href;
+      const hashAt=result.href.indexOf('#');
+      const base=hashAt===-1?result.href:result.href.slice(0,hashAt);
+      const hash=hashAt===-1?'':result.href.slice(hashAt);
+      a.href=base+'?q='+encodeURIComponent(query)+hash;
 
-      const title=el('span','site-search-result-title',result.title);
-      const section=el('span','site-search-result-section',result.section);
-      a.append(title,section);
+      const textWrap=el('span','site-search-result-text');
+      const title=el('span','site-search-result-title');
+      appendHighlightedText(title,result.title,query);
+      textWrap.appendChild(title);
+
+      const snippetValue=makeSearchSnippet(result.raw,query);
+      if(snippetValue){
+        const snippet=el('span','site-search-result-snippet');
+        appendHighlightedText(snippet,snippetValue,query);
+        textWrap.appendChild(snippet);
+      }
+
+      const section=el('span','site-search-result-section');
+      appendHighlightedText(section,result.section,query);
+
+      a.append(textWrap,section);
       list.appendChild(a);
     });
 
@@ -546,6 +646,7 @@ async function init(){
   const enhancements=[
     ['layout',setHeights],
     ['audio',initAudio],
+    ['search highlight',highlightDestination],
     ['anchors',initAnchors],
     ['active index',initActiveIndex],
     ['search',initSearch]

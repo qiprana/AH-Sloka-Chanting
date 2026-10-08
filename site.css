@@ -346,3 +346,33 @@ footer{text-align:center}
   }
   .site-search-result-section{white-space:normal}
 }
+
+/* Search result context and highlighted matches */
+.site-search-result-text{
+  min-width:0;
+  display:grid;
+  gap:4px;
+}
+.site-search-result-snippet{
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#756c62;
+  font:500 .74rem/1.3 system-ui,-apple-system,Segoe UI,sans-serif;
+}
+.site-search-result .search-match,
+main .search-match{
+  background:#f0d36f!important;
+  color:inherit!important;
+  border-radius:3px!important;
+  padding:0 .06em!important;
+}
+@media(max-width:720px){
+  .site-search-result-snippet{
+    white-space:normal;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+  }
+}

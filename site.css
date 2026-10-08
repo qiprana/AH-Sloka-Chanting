@@ -169,3 +169,10 @@ footer{text-align:center}
   overflow-wrap:normal!important;
   word-break:normal!important;
 }
+
+/* Remove the decorative rule below each shloka/source block. */
+.source-attribution{
+  border-top:0!important;
+  padding-top:0!important;
+  margin-top:8px!important;
+}

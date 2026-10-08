@@ -812,3 +812,82 @@ nav{background:rgba(244,248,244,.95)!important;border-bottom:1px solid var(--lin
  .script-pair>.iast-transliteration{width:92%!important}
  .script-pair>.iast-transliteration .iast-text{font-size:.84rem!important}
 }
+
+
+/* ===== UX refresh: header, smooth navigation, sticky chapter audio, audio progress ===== */
+.collection-kicker{
+  margin:0 0 6px;
+  font:800 .76rem/1.2 system-ui,-apple-system,Segoe UI,sans-serif;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h,64px) + 150px)}
+.section,.verse,.herb-card,.intro-card{scroll-behavior:smooth}
+.home-link{font-weight:800!important}
+
+#doshaadi .chapter-audio-suite{
+  position:sticky!important;
+  top:calc(var(--nav-h,64px) + 7px)!important;
+  z-index:46!important;
+  margin-bottom:10px!important;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+#doshaadi .shloka-index{
+  top:calc(var(--nav-h,64px) + var(--chapter-audio-h,0px) + 14px)!important;
+}
+#doshaadi .verse{
+  scroll-margin-top:calc(var(--nav-h,64px) + var(--chapter-audio-h,0px) + 92px)!important;
+}
+
+.audio-progress{
+  display:grid;
+  grid-template-columns:52px minmax(92px,1fr) 66px;
+  gap:8px;
+  align-items:center;
+  min-width:230px;
+  font:650 .72rem/1 system-ui,-apple-system,Segoe UI,sans-serif;
+  color:var(--muted);
+}
+.audio-progress input[type="range"]{
+  width:100%;
+  accent-color:var(--accent);
+  cursor:pointer;
+  padding:0;
+  border:0;
+  box-shadow:none;
+  background:transparent;
+}
+.audio-progress .audio-time{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.audio-progress .audio-elapsed{text-align:left}
+.verse-audio,.attached-audio,.chapter-audio-item{
+  gap:8px!important;
+  flex-wrap:wrap!important;
+}
+.verse-audio audio,.attached-audio audio,.chapter-audio-item audio{
+  position:absolute!important;
+  width:1px!important;height:1px!important;
+  opacity:0!important;pointer-events:none!important;
+}
+.chapter-audio-items{display:grid!important;gap:9px!important}
+.chapter-audio-item{
+  display:grid!important;
+  grid-template-columns:auto auto minmax(240px,1fr)!important;
+  align-items:center!important;
+  width:100%!important;
+}
+.chapter-audio-item .chant-label{display:inline!important;grid-column:auto!important}
+.chapter-audio-suite h3{margin-bottom:8px!important}
+
+@media(max-width:700px){
+  html{scroll-padding-top:calc(var(--nav-h,64px) + 135px)}
+  #doshaadi .chapter-audio-suite{top:calc(var(--nav-h,64px) + 4px)!important;padding:9px 10px!important}
+  #doshaadi .shloka-index{top:calc(var(--nav-h,64px) + var(--chapter-audio-h,0px) + 9px)!important}
+  #doshaadi .verse{scroll-margin-top:calc(var(--nav-h,64px) + var(--chapter-audio-h,0px) + 78px)!important}
+  .chapter-audio-item{grid-template-columns:auto 1fr!important}
+  .chapter-audio-item .audio-progress{grid-column:1/-1;width:100%}
+  .attached-audio,.verse-audio{width:100%!important}
+  .audio-progress{grid-template-columns:44px minmax(78px,1fr) 60px;min-width:0;width:100%;font-size:.67rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}

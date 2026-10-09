@@ -646,15 +646,15 @@ async function init(){
   const enhancements=[
     ['layout',setHeights],
     ['audio',initAudio],
-    ['search highlight',highlightDestination],
     ['anchors',initAnchors],
-    ['active index',initActiveIndex],
-    ['search',initSearch]
+    ['active index',initActiveIndex]
   ];
   enhancements.forEach(([name,fn])=>{
     try{fn();}catch(err){console.warn(name+' enhancement failed:',err);}
   });
   window.addEventListener('resize',()=>{try{setHeights();}catch(e){}},{passive:true});
+  document.documentElement.dataset.collectionReady='true';
+  document.dispatchEvent(new CustomEvent('collection:ready'));
 }
 
 init();

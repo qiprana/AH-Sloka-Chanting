@@ -288,24 +288,16 @@ function renderResults(panel,countEl,records,query){
     .sort((a,b)=>b.score-a.score || b.occurrences-a.occurrences || a.title.localeCompare(b.title));
 
   panel.innerHTML='';
-
-  const totalOccurrences=results.reduce((sum,result)=>sum+result.occurrences,0);
-  if(countEl) countEl.textContent=results.length?String(totalOccurrences):'0';
+  if(countEl) countEl.textContent=results.length?String(results.length):'0';
 
   if(!results.length){
     const empty=document.createElement('div');
     empty.className='site-search-empty';
-    empty.textContent='No exact content matches found.';
+    empty.textContent='No matches found.';
     panel.appendChild(empty);
     panel.hidden=false;
     return;
   }
-
-  const summary=document.createElement('div');
-  summary.className='site-search-summary';
-  summary.textContent=totalOccurrences+' occurrence'+(totalOccurrences===1?'':'s')+
-    ' across '+results.length+' result'+(results.length===1?'':'s');
-  panel.appendChild(summary);
 
   const list=document.createElement('div');
   list.className='site-search-list';
@@ -315,46 +307,24 @@ function renderResults(panel,countEl,records,query){
     link.className='site-search-result';
     link.href=destinationHref(result.href,query);
 
-    const top=document.createElement('div');
-    top.className='site-search-result-top';
-
-    const title=document.createElement('span');
+    const title=document.createElement('div');
     title.className='site-search-result-title';
     appendHighlighted(title,result.title,terms);
-
-    const badge=document.createElement('span');
-    badge.className='site-search-occurrence-badge';
-    badge.textContent=result.occurrences+' match'+(result.occurrences===1?'':'es');
-
-    top.append(title,badge);
-    link.appendChild(top);
+    link.appendChild(title);
 
     const section=document.createElement('div');
     section.className='site-search-result-section';
     section.textContent=result.section;
     link.appendChild(section);
 
-    const details=document.createElement('div');
-    details.className='site-search-match-fields';
+    const best=result.matchedFields.find(item=>item.label!=='Title') || result.matchedFields[0];
+    if(best){
+      const snippet=document.createElement('div');
+      snippet.className='site-search-result-snippet';
+      appendHighlighted(snippet,contextText(best.text,terms),terms);
+      link.appendChild(snippet);
+    }
 
-    result.matchedFields.forEach(match=>{
-      const row=document.createElement('div');
-      row.className='site-search-match-field';
-
-      const label=document.createElement('span');
-      label.className='site-search-field-label';
-      label.textContent=match.label+(match.count>1?' · '+match.count:'');
-      row.appendChild(label);
-
-      const value=document.createElement('span');
-      value.className='site-search-field-text';
-      appendHighlighted(value,contextText(match.text,terms),terms);
-      row.appendChild(value);
-
-      details.appendChild(row);
-    });
-
-    link.appendChild(details);
     list.appendChild(link);
   });
 

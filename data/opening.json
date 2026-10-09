@@ -22,163 +22,163 @@
       "id": "general-shloka-1",
       "kind": "general",
       "roman": "RAAGAADI ROGAAN SATATAANU SHAKTAAN\nASHESHA KAAYA PRASRUTAN ASHESHAN |\nAUTSUKHYA MOHAA RADITAAN JAGANAAM\nYO POORVA VAIDYAYA NAMOSTU TASMAI ||",
-      "devanagari": "रागादिरोगान् सततानुषक्तानशेषकायप्रसृतानशेषान् ।\nऔत्सुक्यमोहारतिदाञ्जघान योऽपूर्ववैद्याय नमोऽस्तु तस्मै ॥",
-      "iast": "rāgādirogān satatānuṣaktānaśeṣakāyaprasṛtānaśeṣān |\nautsukyamohāratidāñjaghāna yo'pūrvavaidyāya namo'stu tasmai ||",
+      "devanagari": "रागादि रोगान् सततानु शक्तान् अशेश काय प्रस्रुतन् अशेशन् | औत्सुख्य मोः रदितान् जगनाम् यो पूर्व वैद्यय नमोस्तु तस्मै ||",
+      "iast": "rāgādi rogān satatānu śaktān aśeśa kāya prasrutan aśeśan | autsukhya moḥ raditān jaganām yo pūrva vaidyaya namostu tasmai ||",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-2",
       "kind": "general",
       "roman": "HITAAHITAM SUKHAM DHUKHAM\nAAYUSTASYA HITAAHITAM |\nMAANAM CHA TACCHA YATROKTAM\nAAYURVEDA SA UCCHYATE ||",
-      "devanagari": "हिताहितं सुखं दुःखमायुस्तस्य हिताहितम् ।\nमानं च तच्च यत्रोक्तमायुर्वेदः स उच्यते ॥",
-      "iast": "hitāhitaṃ sukhaṃ duḥkhamāyustasya hitāhitam |\nmānaṃ ca tacca yatroktamāyurvedaḥ sa ucyate ||",
+      "devanagari": "हिताहितम् सुखम् धुखम् आयुस्तस्य हिताहितम् | मानम् च तच्च यत्रोक्तम् आयुर्वेद स उच्च्यते ||",
+      "iast": "hitāhitam sukham dhukham āyustasya hitāhitam | mānam ca tacca yatroktam āyurveda sa uccyate ||",
       "sourceRoman": "- CHARAKA",
-      "sourceDevanagari": "- चरकसंहिता"
+      "sourceDevanagari": "- चरक"
     },
     {
       "id": "general-shloka-3",
       "kind": "general",
       "roman": "AAYUHU KAAMAYA MAANENA\nDHARMAARTHA SUKHA SAADANAM |\nAAYURVEDOPADESHESHU VIDHEYAH\nPARAMAADARAH ||",
-      "devanagari": "आयुः कामयमानेन धर्मार्थसुखसाधनम् ।\nआयुर्वेदोपदेशेषु विधेयः परमादरः ॥",
-      "iast": "āyuḥ kāmayamānena dharmārthasukhasādhanam |\nāyurvedopadeśeṣu vidheyaḥ paramādaraḥ ||",
+      "devanagari": "आयुहु कामय मानेन धर्मार्थ सुख सादनम् | आयुर्वेदोपदेशेशु विधेयह् परमादरह् ||",
+      "iast": "āyuhu kāmaya mānena dharmārtha sukha sādanam | āyurvedopadeśeśu vidheyah paramādarah ||",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-4",
       "kind": "general",
       "roman": "SHAREERENDRIYA SATVAATMA\nSAMYOGO DHAARIJEEVITAM |\nNITHYAGASCHAANUBANDASCHA\nPARYAAYAIRAAYURUCHYATE ||",
-      "devanagari": "शरीरेन्द्रियसत्त्वात्मसंयोगो धारि जीवितम् ।\nनित्यगश्चानुबन्धश्च पर्यायैरायुरुच्यते ॥",
-      "iast": "śarīrendriyasattvātmasaṃyogo dhāri jīvitam |\nnityagaścānubandhaśca paryāyairāyurucyate ||",
+      "devanagari": "शरीरेन्द्रिय सत्वात्म सम्योगो धारिजीवितम् | निथ्यगस्चानुबन्दस्च पर्यायैरायुरुच्यते ||",
+      "iast": "śarīrendriya satvātma samyogo dhārijīvitam | nithyagascānubandasca paryāyairāyurucyate ||",
       "sourceRoman": "- CHARAKA",
-      "sourceDevanagari": "- चरकसंहिता"
+      "sourceDevanagari": "- चरक"
     },
     {
       "id": "general-shloka-5",
       "kind": "general",
       "roman": "KAAYA BAALA GRAHORDWANGA SHALYA\nDAMSHTRA JARAA VRUSHAN ||",
-      "devanagari": "कायबालग्रहोर्ध्वाङ्गशल्यदंष्ट्राजरावृषान् ।",
-      "iast": "kāyabālagrahordhvāṅgaśalyadaṃṣṭrājarāvṛṣān |",
-      "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "devanagari": "काय बाल ग्रहोर्द्वन्ग शल्य दम्श्त्र जरा व्रुशन् ||",
+      "iast": "kāya bāla grahordvanga śalya damśtra jarā vruśan ||",
+      "sourceRoman": "",
+      "sourceDevanagari": ""
     },
     {
       "id": "general-shloka-6",
       "kind": "general",
       "roman": "ASHTAAVANGAANI TASYAAHUSCHIKITSA\nYESHU SANSHRITAA |",
-      "devanagari": "अष्टावङ्गानि तस्याहुश्चिकित्सा येषु संश्रिता ॥",
-      "iast": "aṣṭāvaṅgāni tasyāhuścikitsā yeṣu saṃśritā ||",
+      "devanagari": "अश्तावन्गानि तस्याहुस्चिकित्स येशु सन्श्रिता |",
+      "iast": "aśtāvangāni tasyāhuscikitsa yeśu sanśritā |",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-7",
       "kind": "general",
       "roman": "VAAYUHU PITTAM KAPHASCHETI\nTRAYO DOSHAH SAMAASATAHA ||\nVIKRUTAAVIKRUTAA DEHAM GHNANTI\nTE VARTAYANTI CHA |",
-      "devanagari": "वायुः पित्तं कफश्चेति त्रयो दोषाः समासतः ॥\nविकृताविकृता देहं घ्नन्ति ते वर्तयन्ति च ।",
-      "iast": "vāyuḥ pittaṃ kaphaśceti trayo doṣāḥ samāsataḥ ||\nvikṛtāvikṛtā dehaṃ ghnanti te vartayanti ca |",
+      "devanagari": "वायुहु पित्तम् कफस्चेति त्रयो दोशह् समासतः || विक्रुताविक्रुता देहम् घ्नन्ति ते वर्तयन्ति च |",
+      "iast": "vāyuhu pittam kaphasceti trayo dośah samāsataḥ || vikrutāvikrutā deham ghnanti te vartayanti ca |",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-8",
       "kind": "general",
       "roman": "TE VYAAPINO API HRUNNABHIR ADHO\nMADYA OORDWA SAMSHRAYAAH ||",
-      "devanagari": "ते व्यापिनोऽपि हृन्नाभ्योरधोमध्योर्ध्वसंश्रयाः ॥",
-      "iast": "te vyāpino'pi hṛnnābhyoradhomadhyordhvasaṃśrayāḥ ||",
+      "devanagari": "ते व्यापिनो अपि ह्रुन्नभिर् अधो मद्य ऊर्द्व सम्श्रयाह् ||",
+      "iast": "te vyāpino api hrunnabhir adho madya ūrdva samśrayāh ||",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-9",
       "kind": "general",
       "roman": "VAYO AHORAATRI BHUKTANAAM TE\nANTAMADHYAADIGAH KRAMAAT |",
-      "devanagari": "वयोऽहोरात्रिभुक्तानां तेऽन्तमध्यादिगाः क्रमात् ।",
-      "iast": "vayo'horātribhuktānāṃ te'ntamadhyādigāḥ kramāt |",
+      "devanagari": "वयो अहोरात्रि भुक्तनाम् ते अन्तमध्यादिगह् क्रमात् |",
+      "iast": "vayo ahorātri bhuktanām te antamadhyādigah kramāt |",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-10",
       "kind": "general",
       "roman": "TAIRBHAVEDVISHAMA STHEEKSHNO\nMANDASCHAAGNIHI SAMAIHI SAMAHA ||",
-      "devanagari": "तैर्भवेद्विषमस्तीक्ष्णो मन्दश्चाग्निः समैः समः ॥",
-      "iast": "tairbhavedviṣamastīkṣṇo mandaścāgniḥ samaiḥ samaḥ ||",
+      "devanagari": "तैर्भवेद्विशम स्थीक्श्नो मन्दस्चाग्निहि समैहि समः ||",
+      "iast": "tairbhavedviśama sthīkśno mandascāgnihi samaihi samaḥ ||",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-11",
       "kind": "general",
       "roman": "TATRA ROOKSHA LAGHUHU SHEETA\nKHARAH SOOKSHMAS CHALO ANILAHA |",
-      "devanagari": "तत्र रूक्षो लघुः शीतः खरः सूक्ष्मश्चलोऽनिलः ।",
-      "iast": "tatra rūkṣo laghuḥ śītaḥ kharaḥ sūkṣmaścalo'nilaḥ |",
+      "devanagari": "तत्र रूक्श लघुहु शीत खरह् सूक्श्मस् चलो अनिलः |",
+      "iast": "tatra rūkśa laghuhu śīta kharah sūkśmas calo anilaḥ |",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-12",
       "kind": "general",
       "roman": "PITTAM SASNEHA TEEKSHNOSHNAM\nLAGHU VISRAM SARAM DRAVAM ||",
-      "devanagari": "पित्तं सस्नेहतीक्ष्णोष्णं लघु विस्रं सरं द्रवम् ॥",
-      "iast": "pittaṃ sasnehatīkṣṇoṣṇaṃ laghu visraṃ saraṃ dravam ||",
+      "devanagari": "पित्तम् सस्नेः तीक्श्नोश्नम् लघु विस्रम् सरम् द्रवम् ||",
+      "iast": "pittam sasneḥ tīkśnośnam laghu visram saram dravam ||",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-13",
       "kind": "general",
       "roman": "SNIGDHAH SHEETO GURURMANDAH\nSLAKSHNO MRUTSNAH STHIRAH KAPHAH|",
-      "devanagari": "स्निग्धः शीतो गुरुर्मन्दः श्लक्ष्णो मृत्स्नः स्थिरः कफः ।",
-      "iast": "snigdhaḥ śīto gururmandaḥ ślakṣṇo mṛtsnaḥ sthiraḥ kaphaḥ |",
+      "devanagari": "स्निग्धह् शीतो गुरुर्मन्दह् स्लक्श्नो म्रुत्स्नह् स्थिरह् कफह्|",
+      "iast": "snigdhah śīto gururmandah slakśno mrutsnah sthirah kaphah|",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-14",
       "kind": "general",
       "roman": "ROGASTU DOSHA VAISHAMYAM\nDOSHASAAMYAM AROGATA |",
-      "devanagari": "रोगस्तु दोषवैषम्यं दोषसाम्यमरोगता ।",
-      "iast": "rogastu doṣavaiṣamyaṃ doṣasāmyamarogatā |",
+      "devanagari": "रोगस्तु दोश वैशम्यम् दोशसाम्यम् अरोगत |",
+      "iast": "rogastu dośa vaiśamyam dośasāmyam arogata |",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-15",
       "kind": "general",
       "roman": "NIJAAGNATU VIBHAGENA TATRA\nROGAA DWIDHA SMRUTAAH ||",
-      "devanagari": "निजागन्तुविभागेन तत्र रोगा द्विधा स्मृताः ॥",
-      "iast": "nijāgantuvibhāgena tatra rogā dvidhā smṛtāḥ ||",
+      "devanagari": "निजाग्नतु विभगेन तत्र रोगा द्विध स्म्रुताह् ||",
+      "iast": "nijāgnatu vibhagena tatra rogā dvidha smrutāh ||",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-16",
       "kind": "general",
       "roman": "RAJASTAMASCHA MANASO DWOU CHA\nDOSHAA UDAAHRUTAU ||",
-      "devanagari": "रजस्तमश्च मनसो द्वौ च दोषावुदाहृतौ ॥",
-      "iast": "rajastamaśca manaso dvau ca doṣāvudāhṛtau ||",
+      "devanagari": "रजस्तमस्च मनसो द्वोउ च दोशा उदाह्रुतौ ||",
+      "iast": "rajastamasca manaso dvou ca dośā udāhrutau ||",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-17",
       "kind": "general",
       "roman": "DARSHANA SPARSHANA PRASHNAIHI\nPARIKSHETA CHA ROGINAAM |",
-      "devanagari": "दर्शनस्पर्शनप्रश्नैः परीक्षेत च रोगिणम् ।",
-      "iast": "darśanasparśanapraśnaiḥ parīkṣeta ca rogiṇam |",
+      "devanagari": "दर्शन स्पर्शन प्रश्नैहि परिक्शेत च रोगिनाम् |",
+      "iast": "darśana sparśana praśnaihi parikśeta ca roginām |",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     },
     {
       "id": "general-shloka-18",
       "kind": "general",
       "roman": "ROGAM NIDAANA PRAAGROOPA\nLAKSHANOPASHAYA AAPTHIBHIHI ||",
-      "devanagari": "रोगं निदानप्राग्रूपलक्षणोपशयाऽऽप्तिभिः ॥",
-      "iast": "rogaṃ nidānaprāgrūpalakṣaṇopaśayāptibhiḥ ||",
+      "devanagari": "रोगम् निदान प्राग्रूप लक्शनोपशय आप्थिभिहि ||",
+      "iast": "rogam nidāna prāgrūpa lakśanopaśaya āpthibhihi ||",
       "sourceRoman": "- ASHTANGA HRIDAYAM",
-      "sourceDevanagari": "- अष्टाङ्गहृदयम्"
+      "sourceDevanagari": "- अष्टाङ्ग हृदयम्"
     }
   ]
 }

@@ -10,14 +10,15 @@ For every shloka added or edited in this repository, use the following order of 
    - Store the joined/source reading in `devanagariSourceText`.
    - Store the corresponding source IAST in `iastSourceText` when available.
 
-3. **Display Devanagari in padavichedana form.**
-   - Split sandhi/compounds into readable word units where appropriate for chanting/study.
-   - Keep the Sanskrit grammar and source reading authoritative.
-   - Do not alter a word merely to resemble the simplified English spelling.
-   - Keep danda punctuation attached to the preceding line.
+3. **Display Devanagari in chanting-unit grouping, not full grammatical padavichedana.**
+   - Use the simplified phonetic Roman only to determine the intended chanting/display units and line grouping.
+   - Do not split a Sanskrit unit more finely than the corresponding simplified-English unit.
+   - Example: `DHAATARAMESHAM` → `धातारमीशं`, not `धातारम् ईशं`.
+   - The Sanskrit source remains authoritative for spelling, sandhi, endings, and diacritics.
+   - Keep danda punctuation attached to the preceding text.
 
 4. **Generate/check IAST from the Sanskrit, not from simplified English.**
-   - IAST should correspond to the displayed Sanskrit padavichedana.
+   - IAST should correspond to the displayed Sanskrit chanting-unit grouping.
    - Preserve diacritics: ā ī ū ṛ ṝ ḷ ṅ ñ ṭ ṭh ḍ ḍh ṇ ś ṣ ṃ ḥ, etc.
 
 5. **Simplified English / phonetic Roman is a separate layer.**
@@ -39,13 +40,13 @@ Original/source Sanskrit:
 लोके जरारुग्भयमृत्युनाशं धातारमीशं विविधौषधीनाम् ॥
 ```
 
-Display padavichedana:
+Display chanting-unit grouping:
 
 ```
 नमामि धन्वन्तरिम् आदिदेवं ।
 सुरासुरैः वन्दित पादपद्मम् ॥
 लोके जरा रुक् भय मृत्यु नाशं ।
-धातारम् ईशं विविधौषधीनाम् ॥
+धातारमीशं विविधौषधीनाम् ॥
 ```
 
 IAST display:
@@ -54,5 +55,5 @@ IAST display:
 namāmi dhanvantarim ādidevaṃ |
 surāsuraiḥ vandita pādapadmam ||
 loke jarā ruk bhaya mṛtyu nāśaṃ |
-dhātāram īśaṃ vividhauṣadhīnām ||
+dhātāramīśaṃ vividhauṣadhīnām ||
 ```

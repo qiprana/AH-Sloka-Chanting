@@ -12,10 +12,10 @@
         "type": "audio/mpeg"
       },
       "roman": "ASHWAGANDHA ANILASLESHMA SHWITRA\nSHOTHA KSHAYAPAHA |\nBALYA RASAAYANI TIKTA KASHAYAATI\nSHUKRA ||",
-      "devanagari": "अश्वगन्ध अनिलस्लेश्म श्वित्र शोथ क्शयपः | बल्य रसायनि तिक्त कशयाति शुक्र ||",
-      "iast": "aśvagandha anilasleśma śvitra śotha kśayapaḥ | balya rasāyani tikta kaśayāti śukra ||",
-      "sourceRoman": "- BHAVAPRAKASHA NIGANTU",
-      "sourceDevanagari": "- भवप्रकाश निघण्टु"
+      "devanagari": "अश्वगन्धाऽनिलश्लेष्मश्वित्रशोथक्षयापहा ।\nबल्या रसायनी तिक्ता कषायोष्णाऽतिशुक्रला ॥",
+      "iast": "aśvagandhā'nilaśleṣmaśvitraśothakṣayāpahā |\nbalyā rasāyanī tiktā kaṣāyoṣṇā'tiśukralā ||",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     },
     {
       "id": "brahmi",
@@ -26,10 +26,10 @@
         "type": "audio/mpeg"
       },
       "roman": "BRAAHMI HIMA SARA TIKTA LAGHUR\nMEDYACHA SHEETALA\nKASHAAYA MADHURA PAAKA AAYUSHYA\nRASAAYANI |\nSWARYA SMRUTI PRADA KUSHTA PAANDU\nMEHAASRA KAASA JITH\nVISHASHOTHA JWARA HARI TADVAT\nMANDUKAPARNINI ||",
-      "devanagari": "ब्राह्मि हिम सर तिक्त लघुर् मेद्यच शीतल कशाय मधुर पाक आयुश्य रसायनि | स्वर्य स्म्रुति प्रद कुश्त पान्दु मेहास्र कास जिथ् विशशोथ ज्वर हरि तद्वत् मन्दुकपर्निनि ||",
-      "iast": "brāhmi hima sara tikta laghur medyaca śītala kaśāya madhura pāka āyuśya rasāyani | svarya smruti prada kuśta pāndu mehāsra kāsa jith viśaśotha jvara hari tadvat mandukaparnini ||",
-      "sourceRoman": "- BHAVAPRAKASHA NIGANTU",
-      "sourceDevanagari": "- भवप्रकाश निघण्टु"
+      "devanagari": "ब्राह्मी हिमा सरा तिक्ता लघुर्मेध्या च शीतला ।\nकषाया मधुरा स्वादुपाकायुष्या रसायनी ॥\nस्वर्या स्मृतिप्रदा कुष्ठपाण्डुमेहास्रकासजित् ।\nविषशोथज्वरहरी तद्वन्मण्डूकपर्णिका ॥",
+      "iast": "brāhmī himā sarā tiktā laghurmedhyā ca śītalā |\nkaṣāyā madhurā svādupākāyuṣyā rasāyanī ||\nsvaryā smṛtipradā kuṣṭhapāṇḍumehāsrakāsajit |\nviṣaśothajvaraharī tadvanmaṇḍūkaparṇikā ||",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     },
     {
       "id": "haridra",
@@ -40,10 +40,10 @@
         "type": "audio/mpeg"
       },
       "roman": "HARIDRA KATUKA TIKTA\nROOSKHOSHNA KAPHAPITTANUTu|\nVARNYO TWAKDOSHA MEHASRA\nSHOTHA PANDU VRANAAPAHA ||",
-      "devanagari": "हरिद्र कतुक तिक्त रूस्खोश्न कफपित्तनुतु| वर्न्यो त्वक्दोश मेहस्र शोथ पन्दु व्रनापः ||",
-      "iast": "haridra katuka tikta rūskhośna kaphapittanutu| varnyo tvakdośa mehasra śotha pandu vranāpaḥ ||",
-      "sourceRoman": "- BHAVAPRAKASHA NIGANTU",
-      "sourceDevanagari": "- भवप्रकाश निघण्टु"
+      "devanagari": "हरिद्रा कटुका तिक्ता रूक्षोष्णा कफपित्तनुत् ।\nवर्ण्या त्वग्दोषमेहास्रशोथपाण्डुव्रणापहा ॥",
+      "iast": "haridrā kaṭukā tiktā rūkṣoṣṇā kaphapittanut |\nvarṇyā tvagdoṣamehāsraśothapāṇḍuvraṇāpahā ||",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     },
     {
       "id": "amalaki",
@@ -54,10 +54,10 @@
         "type": "audio/mpeg"
       },
       "roman": "AMLAM SAMADHURAM TIKTAM\nKASHAAYAM KATUKAM SARAM |\nCHAKSHUSHYAM SARVADOSHAGHNAM\nVRUSHYAM AMALAKI PHALAM ||",
-      "devanagari": "अम्लम् समधुरम् तिक्तम् कशायम् कतुकम् सरम् | चक्शुश्यम् सर्वदोशघ्नम् व्रुश्यम् अमलकि फलम् ||",
-      "iast": "amlam samadhuram tiktam kaśāyam katukam saram | cakśuśyam sarvadośaghnam vruśyam amalaki phalam ||",
-      "sourceRoman": "- SUSHRUTA SUTRA",
-      "sourceDevanagari": "- सुश्रुत सुत्र"
+      "devanagari": "अम्लं समधुरं तिक्तं कषायं कटुकं सरम् ।\nचक्षुष्यं सर्वदोषघ्नं वृष्यमामलकीफलम् ॥",
+      "iast": "amlaṃ samadhuraṃ tiktaṃ kaṣāyaṃ kaṭukaṃ saram |\ncakṣuṣyaṃ sarvadoṣaghnaṃ vṛṣyamāmalakīphalam ||",
+      "sourceRoman": "- SUSHRUTA SAMHITA, SUTRASTHANA 46.143",
+      "sourceDevanagari": "- सुश्रुतसंहिता, सूत्रस्थान ४६.१४३"
     },
     {
       "id": "guduchi",
@@ -68,10 +68,10 @@
         "type": "audio/mpeg"
       },
       "roman": "GUDUCHI KATUKA TIKTA SWAADUPAKA\nRASAYANEE |\nSANGRAHINI KASHAYOSHNA LAGHVI\nBALYAGNI DEEPINI ||\nDOSHATRAYAAMA TRITDAHA\nMEHAKAASAMSHCHA PANDUTAM |\nKAAMALA KUSHTA VAATAASRA JWARA\nKRUMI VAMIN HARET ||",
-      "devanagari": "गुदुचि कतुक तिक्त स्वादुपक रसयनी | सन्ग्रहिनि कशयोश्न लघ्वि बल्यग्नि दीपिनि || दोशत्रयाम त्रित्दः मेहकासम्श्च पन्दुतम् | कामल कुश्त वातास्र ज्वर क्रुमि वमिन् हरेत् ||",
-      "iast": "guduci katuka tikta svādupaka rasayanī | sangrahini kaśayośna laghvi balyagni dīpini || dośatrayāma tritdaḥ mehakāsamśca pandutam | kāmala kuśta vātāsra jvara krumi vamin haret ||",
-      "sourceRoman": "- BHAVAPRAKASHA NIGANTU",
-      "sourceDevanagari": "- भवप्रकाश निघण्टु"
+      "devanagari": "गुडूची कटुका तिक्ता स्वादुपाका रसायनी ।\nसंग्राहिणी कषायोष्णा लघ्वी बल्याऽग्निदीपनी ।\nदोषत्रयामतृड्दाहमेहकासांश्च पाण्डुताम् ॥\nकामलाकुष्ठवातास्रज्वरकृमिवमीन्हरेत् ।",
+      "iast": "guḍūcī kaṭukā tiktā svādupākā rasāyanī |\nsaṅgrāhiṇī kaṣāyoṣṇā laghvī balyā'gnidīpanī |\ndoṣatrayāmatṛḍdāhamehakāsāṃśca pāṇḍutām ||\nkāmalākuṣṭhavātāsrajvarakṛmivamīnharet |",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     },
     {
       "id": "tulsi",
@@ -82,10 +82,10 @@
         "type": "audio/mpeg"
       },
       "roman": "TULASI KATUKA TIKTA HRUDYOSHNA\nDAAHA PITTA KRUTu |\nDEEPANI KUSHTA KRICHRASRA\nPAARSHWARUK KAPHA VAATAJITu ||",
-      "devanagari": "तुलसि कतुक तिक्त ह्रुद्योश्न दाः पित्त क्रुतु | दीपनि कुश्त क्रिच्रस्र पार्श्वरुक् कफ वातजितु ||",
-      "iast": "tulasi katuka tikta hrudyośna dāḥ pitta krutu | dīpani kuśta kricrasra pārśvaruk kapha vātajitu ||",
-      "sourceRoman": "- BHAVAPRAKASHA NIGANTU",
-      "sourceDevanagari": "- भवप्रकाश निघण्टु"
+      "devanagari": "तुलसी कटुका तिक्ता हृद्योष्णा दाहपित्तकृत् ।\nदीपनी कुष्ठकृच्छ्रास्रपार्श्वरुक्कफवातजित् ।",
+      "iast": "tulasī kaṭukā tiktā hṛdyoṣṇā dāhapittakṛt |\ndīpanī kuṣṭhakṛcchrāsrapārśvarukkaphavātajit |",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     },
     {
       "id": "anantmul",
@@ -96,10 +96,10 @@
         "type": "audio/mpeg"
       },
       "roman": "SAAREEVA YUGALAM\nSWAADU SNIGDA SHUKRAKARAM\nGURUHU |\n\nAGNIMAANDYAARUCHI SHWAASA\nKAASAAMAA VISHANAASHANAM |\nDOSHATRAYAPRADARA\nJWARAATISAARA NAASHANAM ||",
-      "devanagari": "सारीव युगलम् स्वादु स्निग्द शुक्रकरम् गुरुहु | अग्निमान्द्यारुचि श्वास कासामा विशनाशनम् | दोशत्रयप्रदर ज्वरातिसार नाशनम् ||",
-      "iast": "sārīva yugalam svādu snigda śukrakaram guruhu | agnimāndyāruci śvāsa kāsāmā viśanāśanam | dośatrayapradara jvarātisāra nāśanam ||",
-      "sourceRoman": "- BHAVAPRAKASHA NIGANTU",
-      "sourceDevanagari": "- भवप्रकाश निघण्टु"
+      "devanagari": "सारिवायुगलं स्वादु स्निग्धं शुक्रकरं गुरु ।\nअग्निमान्द्यारुचिश्वासकासामविषनाशनम् ।\nदोषत्रयास्रप्रदरज्वरातीसारनाशनम् ॥",
+      "iast": "sārivāyugalaṃ svādu snigdhaṃ śukrakaraṃ guru |\nagnimāndyāruciśvāsakāsāmaviṣanāśanam |\ndoṣatrayāsrapradarajvarātīsāranāśanam ||",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     },
     {
       "id": "kumari",
@@ -110,10 +110,10 @@
         "type": "audio/mpeg"
       },
       "roman": "KUMAARI BHEDANI SHEETA\nTIKTA NETRYA RASAYANEE |\n\nGULMA PLEEHA YAKRUD VRUDDI\nKAPHAJWARA HARI HARET ||\nGRANTHYAAGNI DAGDA VISPOTA\nPITTARAKTA TVAGAAMAYAAN |",
-      "devanagari": "कुमारि भेदनि शीत तिक्त नेत्र्य रसयनी | गुल्म प्लीः यक्रुद् व्रुद्दि कफज्वर हरि हरेत् || ग्रन्थ्याग्नि दग्द विस्पोत पित्तरक्त त्वगामयान् |",
-      "iast": "kumāri bhedani śīta tikta netrya rasayanī | gulma plīḥ yakrud vruddi kaphajvara hari haret || granthyāgni dagda vispota pittarakta tvagāmayān |",
-      "sourceRoman": "- BHAVAPRAKASHA NIGANTU",
-      "sourceDevanagari": "- भवप्रकाश निघण्टु"
+      "devanagari": "कुमारी भेदनी शीता तिक्ता नेत्र्या रसायनी ।\nगुल्मप्लीहयकृद्वृद्धिकफज्वरहरी हरेत् ।\nग्रन्थ्यग्निदग्धविस्फोटपित्तरक्तत्वगामयान् ॥",
+      "iast": "kumārī bhedanī śītā tiktā netryā rasāyanī |\ngulmaplīhayakṛdvṛddhikaphajvaraharī haret |\ngranthyagnidagdhavisphoṭapittaraktatvagāmayān ||",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     },
     {
       "id": "vidanga",
@@ -124,10 +124,10 @@
         "type": "audio/mpeg"
       },
       "roman": "VIDANGAM KATU TEEKSHNOSHNAM\nROOKSHAM VANHIKARAM LAGHUHU |\n\nSHOOLAADMAANA UDARASHLESHMA\nKRUMI VAATA VIBHANDA NUTHu |",
-      "devanagari": "विदन्गम् कतु तीक्श्नोश्नम् रूक्शम् वन्हिकरम् लघुहु | शूलाद्मान उदरश्लेश्म क्रुमि वात विभन्द नुथु |",
-      "iast": "vidangam katu tīkśnośnam rūkśam vanhikaram laghuhu | śūlādmāna udaraśleśma krumi vāta vibhanda nuthu |",
-      "sourceRoman": "",
-      "sourceDevanagari": ""
+      "devanagari": "विडङ्गं कटु तीक्ष्णोष्णं रूक्षं वह्निकरं लघु ।\nशूलाध्मानोदरश्लेष्मकृमिवातविबन्धनुत् ॥",
+      "iast": "viḍaṅgaṃ kaṭu tīkṣṇoṣṇaṃ rūkṣaṃ vahnikaraṃ laghu |\nśūlādhmānodaraśleṣmakṛmivātavibandhanut ||",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     },
     {
       "id": "gokshura",
@@ -135,10 +135,10 @@
       "audioLabel": "",
       "audio": null,
       "roman": "GOKSHUARAH SHEETALAH\nSWAADUHU\nBALA KRUT BASTI SHODHANAHA\nMADHURO DEEPANO VRUSHYAHA\nDRISHTIDASHCHA ASHMARI HARAHA\nPRAMEHA SHWAASA KAASA ARSHA\nKRUCHRA HRIDROGA VAATANUTu",
-      "devanagari": "गोक्शुअरह् शीतलह् स्वादुहु बल क्रुत् बस्ति शोधनः मधुरो दीपनो व्रुश्यः द्रिश्तिदश्च अश्मरि हरः प्रमेः श्वास कास अर्श क्रुच्र ह्रिद्रोग वातनुतु",
-      "iast": "gokśuarah śītalah svāduhu bala krut basti śodhanaḥ madhuro dīpano vruśyaḥ driśtidaśca aśmari haraḥ prameḥ śvāsa kāsa arśa krucra hridroga vātanutu",
-      "sourceRoman": "",
-      "sourceDevanagari": ""
+      "devanagari": "गोक्षुरः शीतलः स्वादुर्बलकृद्बस्तिशोधनः ।\nमधुरो दीपनो वृष्यः पुष्टिदश्चाश्मरीहरः ।\nप्रमेहश्वासकासार्शः कृच्छ्रहृद्रोगवातनुत् ॥",
+      "iast": "gokṣuraḥ śītalaḥ svādurbalakṛdbastiśodhanaḥ |\nmadhuro dīpano vṛṣyaḥ puṣṭidaścāśmarīharaḥ |\npramehaśvāsakāsārśaḥ kṛcchrahṛdrogavātanut ||",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     },
     {
       "id": "punarnava",
@@ -146,10 +146,10 @@
       "audioLabel": "",
       "audio": null,
       "roman": "PUNARNAVAARUNA TIKTA\nKATUPAAKAA HIMAA LAGHUHU\n\nVAATALAA GRAAHINI SHLESHMA\nPITTARAKTA VINAASHINI",
-      "devanagari": "पुनर्नवारुन तिक्त कतुपाका हिमा लघुहु वातला ग्राहिनि श्लेश्म पित्तरक्त विनाशिनि",
-      "iast": "punarnavāruna tikta katupākā himā laghuhu vātalā grāhini śleśma pittarakta vināśini",
-      "sourceRoman": "",
-      "sourceDevanagari": ""
+      "devanagari": "पुनर्नवारुणा तिक्ता कटुपाका हिमा लघुः ।\nवातला ग्राहिणी श्लेष्मपित्तरक्तविनाशिनी ॥",
+      "iast": "punarnavāruṇā tiktā kaṭupākā himā laghuḥ |\nvātalā grāhiṇī śleṣmapittaraktavināśinī ||",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     },
     {
       "id": "rasna",
@@ -157,10 +157,10 @@
       "audioLabel": "",
       "audio": null,
       "roman": "RAASNAAMA PAACHANI TIKTA\nGURUSHNA KAPHA VATA JITH\nSHOTHA SHWAASA SAMEERAASRA\nVAATA SHOOLODARA APAHA\nKAASA JWARA VISHAASHEETI\nVAATIKAAMAYA SIDHMA HRIT",
-      "devanagari": "रास्नाम पाचनि तिक्त गुरुश्न कफ वत जिथ् शोथ श्वास समीरास्र वात शूलोदर अपः कास ज्वर विशाशीति वातिकामय सिध्म ह्रित्",
-      "iast": "rāsnāma pācani tikta guruśna kapha vata jith śotha śvāsa samīrāsra vāta śūlodara apaḥ kāsa jvara viśāśīti vātikāmaya sidhma hrit",
-      "sourceRoman": "- BHAVAPRAKASHA NIGANTU",
-      "sourceDevanagari": "- भवप्रकाश निघण्टु"
+      "devanagari": "रास्नाऽऽमपाचनी तिक्ता गुरूष्णा कफवातजित् ।\nशोथश्वाससमीरास्रवातशूलोदरापहा ।\nकासज्वरविषाशीतिवातिकामयसिध्महृत् ॥",
+      "iast": "rāsnā'mapācanī tiktā gurūṣṇā kaphavātajit |\nśothaśvāsasamīrāsravātaśūlodarāpahā |\nkāsajvaraviṣāśītivātikāmayasidhmahṛt ||",
+      "sourceRoman": "- BHAVAPRAKASHA NIGHANTU",
+      "sourceDevanagari": "- भावप्रकाश निघण्टु"
     }
   ]
 }
